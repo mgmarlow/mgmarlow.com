@@ -18,7 +18,7 @@ const P = styled.p`
 `
 
 const LINKS = [
-  { variant: 'pink', href: 'https://techbookclub.dev', name: 'newsletter' },
+  { variant: 'pink', href: 'https://techbookclub.dev', name: 'words' },
   { variant: 'blue', href: 'https://github.com/mgmarlow', name: 'open source' },
   { variant: 'yellow', href: 'https://mgmarlow.itch.io/', name: 'games' },
 ]
