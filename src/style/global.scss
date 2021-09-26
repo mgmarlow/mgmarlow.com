@@ -13,6 +13,10 @@ a {
   text-decoration: underline !important;
 }
 
+pre[class*='language-'] {
+  font-size: $code-size;
+}
+
 // Copy .content margin:
 .remark-highlight {
   margin-bottom: 1em;
