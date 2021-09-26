@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'astro-seo'
 import ArticlePreview from '../components/ArticlePreview.jsx'
 import Container from '../components/Container.astro'
 
@@ -16,7 +17,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date)
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>mgmarlow.com</title>
+    <SEO title="mgmarlow.com" description="Articles written by Graham Marlow" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="{Astro.resolve('../style/global.css')}" />
   </head>
@@ -29,7 +30,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date)
 
 
         <section>
-          <h2 class="is-size-5 has-text-weight-bold">words</h2>
+          <h2 class="is-size-5 has-text-weight-bold mb-4">words</h2>
 
           <ul>
             {allPosts.map(p => <li><ArticlePreview article={p} /></li>)}
