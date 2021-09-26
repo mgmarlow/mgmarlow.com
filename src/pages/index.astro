@@ -1,0 +1,42 @@
+---
+import { SEO } from 'astro-seo'
+import ArticlePreview from '../components/ArticlePreview.jsx'
+import Container from '../components/Container.astro'
+
+let allPosts = Astro.fetchContent('./articles/*.md')
+allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+---
+
+<style>
+  .about {
+    max-width: 460px;
+  }
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <SEO title="mgmarlow.com" description="Articles written by Graham Marlow" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="{Astro.resolve('../style/global.css')}" />
+  </head>
+  <body>
+    <main class="my-6">
+      <Container>
+        <section class="mb-6 about">
+          <p class="is-size-4">I'm <strong>Graham Marlow</strong>, a software engineer who spends too much time on the web.</p>
+        </section>
+
+
+        <section>
+          <h2 class="is-size-5 has-text-weight-bold mb-4">words</h2>
+
+          <ul>
+            {allPosts.map(p => <li><ArticlePreview article={p} /></li>)}
+          </ul>
+        </section>
+      </Container>
+    </main>
+  </body>
+</html>

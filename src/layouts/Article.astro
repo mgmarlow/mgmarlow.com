@@ -1,0 +1,37 @@
+---
+import { SEO } from 'astro-seo'
+import Container from '../components/Container.astro'
+import Footer from '../components/Footer.jsx'
+
+const {content} = Astro.props
+const {title, description} = content
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <SEO title={title} description={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{Astro.resolve('../style/global.css')}" />
+  </head>
+
+  <body>
+    <Container>
+      <header class="mb-4">
+        <a href="https://mgmarlow.com">mgmarlow.com</a>
+      </header>
+
+      <div class="content is-medium">
+        <h1>{title}</h1>
+
+        <slot />
+      </div>
+    </Container>
+
+    <Footer className="mt-6" />
+  </body>
+</html>
