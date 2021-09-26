@@ -1,0 +1,9 @@
+blockquote {
+  padding: 1.25rem 1rem;
+  border-left: 5px solid #dbdbdb;
+  margin-bottom: var(--bottom-margin);
+}
+
+blockquote > p {
+  margin: 0;
+}
