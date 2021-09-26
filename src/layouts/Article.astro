@@ -1,0 +1,15 @@
+---
+import { SEO } from 'astro-seo'
+
+const {content} = Astro.props
+const {title, description} = content
+---
+<html lang={ content.lang || 'en' }>
+  <head>
+    <SEO title={title} description={description} />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
