@@ -10,8 +10,8 @@ export default function Footer({ className }) {
           </strong>{' '}
           by Graham Marlow.
         </p>
-        <p>
-          If you'd like to support my writing, consider{' '}
+        <p style={{maxWidth: '400px', margin: '0 auto'}}>
+          This site doesn't use trackers. If you like my writing, consider <a href="mailto:mgmarlow@hey.com">dropping me a line</a> or{' '}
           <a href="https://www.buymeacoffee.com/mgmarlow">buying me a coffee</a>
           .
         </p>
