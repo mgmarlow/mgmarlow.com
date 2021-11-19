@@ -19,7 +19,7 @@ allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date)
     <meta name="viewport" content="width=device-width" />
     <SEO title="mgmarlow.com" description="Articles written by Graham Marlow" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="{Astro.resolve('../style/global.css')}" />
+    <link rel="stylesheet" href={Astro.resolve('../style/global.scss')} />
   </head>
   <body>
     <main class="my-6">

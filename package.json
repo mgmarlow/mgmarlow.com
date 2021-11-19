@@ -8,12 +8,10 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "devDependencies": {
-    "astro": "^0.20.7"
-  },
   "dependencies": {
-    "@astrojs/renderer-react": "^0.2.1",
-    "astro-seo": "^0.3.11",
+    "@astrojs/renderer-react": "^0.3.0",
+    "astro": "^0.21.0",
+    "astro-seo": "^0.4.2",
     "bulma": "^0.9.3",
     "classnames": "^2.3.1"
   }
