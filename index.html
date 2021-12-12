@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width" />
     <SEO title="mgmarlow.com" description="Articles written by Graham Marlow" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link href="/index.css" rel="stylesheet" />
   </head>
   <body class="bg-slate-800">
-    <main class="p-16">
-      <section>
-        <h1 class="text-zinc-200 text-3xl">
-          I'm <strong>Graham Marlow</strong>, a software engineer who spends too
-          much time on the web.
+    <main class="grid place-content-center p-10 mt-10">
+      <section class="mb-10">
+        <h1 class="text-zinc-200 text-xl max-w-md">
+          I'm <strong class="text-2xl">Graham Marlow</strong>, a software
+          engineer who spends too much time on the web.
         </h1>
       </section>
 
-      <ul class="text-zinc-200">
-        <li>
+      <ul class="text-zinc-200 md:inline-flex">
+        <li class="mr-5 mb-2">
           <a
             class="
               text-xl
@@ -29,7 +35,7 @@
             >words</a
           >
         </li>
-        <li>
+        <li class="mr-5 mb-2">
           <a
             class="
               text-xl
@@ -38,10 +44,10 @@
               hover:decoration-green-500
             "
             href="https://techbookclub.dev"
-            >podcast</a
+            >book club</a
           >
         </li>
-        <li>
+        <li class="mr-5 mb-2">
           <a
             class="
               text-xl
@@ -51,6 +57,18 @@
             "
             href="https://github.com/mgmarlow"
             >github</a
+          >
+        </li>
+        <li class="mr-5 mb-2">
+          <a
+            class="
+              text-xl
+              underline
+              decoration-red-500/70
+              hover:decoration-red-500
+            "
+            href="https://mgmarlow.itch.io"
+            >games</a
           >
         </li>
       </ul>
