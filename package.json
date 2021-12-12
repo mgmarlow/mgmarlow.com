@@ -3,16 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "start": "npx @11ty/eleventy --serve --output=out & yarn tw:start",
+    "build": "npx @11ty/eleventy --formats=html --output=out & yarn tw:build",
+    "tw:build": "npx tailwindcss -i index.css -o out/index.css",
+    "tw:start": "npx tailwindcss -i index.css -o out/index.css --watch"
   },
   "dependencies": {
-    "@astrojs/renderer-react": "^0.3.0",
-    "astro": "^0.21.0",
-    "astro-seo": "^0.4.2",
-    "bulma": "^0.9.3",
-    "classnames": "^2.3.1"
+    "@11ty/eleventy": "^0.12.1",
+    "tailwindcss": "^3.0.1"
   }
 }
