@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve --output=out & yarn tw:start",
     "build": "npx @11ty/eleventy --formats=html --output=out & yarn tw:build",
-    "tw:build": "npx tailwindcss -i index.css -o out/index.css",
+    "tw:build": "npx tailwindcss -i index.css -o out/index.css --minify",
     "tw:start": "npx tailwindcss -i index.css -o out/index.css --watch"
   },
   "dependencies": {
