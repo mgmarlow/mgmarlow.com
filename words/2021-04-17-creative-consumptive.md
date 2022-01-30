@@ -1,6 +1,8 @@
 ---
 title: creative-consumptive entertainment
+tags: post
 layout: post.njk
+date: 2021-04-17
 ---
 
 # Theories on creative-consumptive entertainment

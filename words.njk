@@ -1,0 +1,17 @@
+---
+layout: post.njk
+---
+
+<h1>words</h1>
+
+<main>
+  <ul>
+    {%- for post in collections.post -%}
+    <li>
+      <a href="{{ post.url | url }}"
+        >{{ post.data.title }} – {{ post.data.date | postDate }}</a
+      >
+    </li>
+    {%- endfor -%}
+  </ul>
+</main>
