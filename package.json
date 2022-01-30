@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "npx @11ty/eleventy --serve --output=out & yarn tw:start",
-    "build": "npx @11ty/eleventy --formats=html --output=out & yarn tw:build",
+    "build": "npx @11ty/eleventy --output=out & yarn tw:build",
     "tw:build": "npx tailwindcss -i index.css -o out/index.css --minify",
     "tw:start": "npx tailwindcss -i index.css -o out/index.css --watch"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.1",
+    "luxon": "^2.3.0",
     "tailwindcss": "^3.0.1"
   }
 }
