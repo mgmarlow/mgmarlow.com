@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn build && npx @11ty/eleventy --serve --output=out & yarn tw:start",
-    "build": "npx @11ty/eleventy --output=out && yarn tw:build",
-    "tw:start": "npx tailwindcss -i index.css -o out/index.css",
-    "tw:build": "npx tailwindcss -i index.css -o out/index.css --minify"
+    "start": "yarn build && concurrently \"eleventy --serve --output=out\" \"yarn tw:start -w\"",
+    "build": "eleventy --output=out && yarn tw:build",
+    "tw:start": "tailwindcss -i index.css -o out/index.css",
+    "tw:build": "tailwindcss -i index.css -o out/index.css --minify"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
@@ -14,5 +14,8 @@
     "@tailwindcss/typography": "^0.5.1",
     "luxon": "^2.3.0",
     "tailwindcss": "^3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
   }
 }
