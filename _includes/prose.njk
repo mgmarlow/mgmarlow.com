@@ -1,0 +1,14 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  {% block header %}
+  {% endblock %}
+
+  <article
+    class="prose dark:prose-invert lg:prose-l mx-auto md:mt-20 mb-20 p-5 md:p-0"
+  >
+    {{ content | safe }}
+  </article>
+
+  {% include "footer.njk" %}
+{% endblock %}

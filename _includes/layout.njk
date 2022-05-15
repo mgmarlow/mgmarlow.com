@@ -16,6 +16,8 @@
     />
   </head>
   <body class="bg-slate-800">
-    {{ content | safe }}
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
   </body>
 </html>
