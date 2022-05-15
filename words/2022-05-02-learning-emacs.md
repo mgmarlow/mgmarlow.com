@@ -184,4 +184,4 @@ By design I've left off a ton of useful packages and settings that you may event
 - [lsp-mode](https://emacs-lsp.github.io/lsp-mode/): LSP for Emacs
 - [company-mode](https://company-mode.github.io/): code completion framework
 
-You can follow along with my full configuration here: [dotfiles/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
+Check out my full configuration here: [dotfiles/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
