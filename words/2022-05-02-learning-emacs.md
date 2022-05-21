@@ -165,6 +165,8 @@ As long as you're familiar with basic Emacs terminology (e.g. buffers, windows, 
 
 ### Projectile
 
+> **Edit**: Since writing this article, I have swapped over to [project.el](https://github.com/emacs-mirror/emacs/blob/master/lisp/progmodes/project.el) instead of Projectile since it ships with Emacs 26+ and covers all of my needs. If you need something more featureful, Projectile is still a great option. Otherwise, learn how to use project.el with `C-x p C-h` or the [manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html).
+
 Even with Ivy, navigating between files in a project can be a bit cumbersome if you're only using `M-x find-file`. Projectile solves this problem by giving you a ton of new tools built around a project directory.
 
 A project in projectile parlance is basically just a directory that is version controlled. Once you open up a project with `S-p p <project path>`, projectile provides you with a bunch of commands to help navigate that project.
