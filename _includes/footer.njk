@@ -1,11 +1,19 @@
-<footer class="prose prose-invert lg:prose-l mx-auto mb-20 ml-5 mr-5 md:mx-auto">
+<footer
+  class="prose prose-invert lg:prose-l mx-auto mb-20 ml-5 mr-5 md:mx-auto"
+>
   <div role="separator" class="py-4">
     <div class="w-full border-t border-gray-400"></div>
   </div>
 
-  <strong><a href="{{ '/' | url }}">mgmarlow.com</a></strong>
-  <span class="mx-1" role="separator">/</span>
-  <strong><a href="{{ '/words' | url }}">words</a></strong>
-  <!-- <span class="mx-1" role="separator">/</span> -->
-  <!-- <strong><a href="{{ '/me' | url }}">me</a></strong> -->
+  <div class="md:flex md:justify-between">
+    <div>
+      <strong><a href="{{ '/' | url }}">mgmarlow.com</a></strong>
+      <span class="mx-1" role="separator">/</span>
+      <strong><a href="{{ '/words' | url }}">words</a></strong>
+    </div>
+
+    <div class="mt-5 md:mt-0">
+      <strong><a href="mailto:mgmarlow@hey.com">mgmarlow@hey.com</a></strong>
+    </div>
+  </div>
 </footer>
