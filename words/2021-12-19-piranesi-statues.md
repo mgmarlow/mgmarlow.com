@@ -1,8 +1,6 @@
 ---
-layout: post.njk
 title: statues of piranesi
 date: 2021-12-19
-tags: post
 ---
 
 # Statues of Piranesi

@@ -1,7 +1,5 @@
 ---
 title: emacs from scratch
-tags: post
-layout: post.njk
 date: 2022-05-08
 ---
 

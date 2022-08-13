@@ -1,8 +1,6 @@
 ---
-layout: post.njk
 title: what happened to proper tail calls in JS
 date: 2021-03-27
-tags: post
 ---
 
 # What happened to proper tail calls in JavaScript?

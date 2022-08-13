@@ -1,7 +1,5 @@
 ---
 title: game design is immaterial
-tags: post
-layout: post.njk
 date: 2021-03-20
 ---
 

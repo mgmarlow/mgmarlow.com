@@ -1,8 +1,6 @@
 ---
-layout: post.njk
 title: revisiting rescript
 date: 2021-12-11
-tags: post
 ---
 
 # Revisiting ReScript
