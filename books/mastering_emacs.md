@@ -1,7 +1,7 @@
 ---
 title: Mastering Emacs
 author: Mickey Peterson
-completed: 2022-05-21
+date: 2022-05-21
 rating: 4
 ---
 
