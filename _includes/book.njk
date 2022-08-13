@@ -1,0 +1,19 @@
+{% extends "prose.njk" %}
+
+{% block header %}
+<nav class="prose prose-invert lg:prose-l mx-auto mt-2">
+    <a class="ml-5 md:ml-0" href="{{ '/books' | url }}">← books</a>
+</nav>
+{% endblock %}
+
+{% block articleheader %}
+<h2 class="mb-0">
+  <strong>{{title}}</strong>
+</h2>
+
+<p>
+  by {{author}}
+  <br />
+  <small>Rating: {{rating}}/5</small>
+</p>
+{% endblock %}

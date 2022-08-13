@@ -7,6 +7,9 @@
   <article
     class="prose prose-invert lg:prose-l mx-auto md:mt-20 mb-20 p-5 md:p-0"
   >
+    {% block articleheader %}
+    {% endblock %}
+
     {{ content | safe }}
   </article>
 

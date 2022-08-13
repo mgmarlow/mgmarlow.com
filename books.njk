@@ -1,0 +1,16 @@
+---
+layout: prose.njk
+---
+
+<h1>some books i've read</h1>
+
+<main>
+  <ul class="p-0">
+    {%- for book in collections.book -%}
+    <li class="flex justify-between pl-0 flex-col md:flex-row">
+      <a href="{{ book.url | url }}">{{ book.data.title }}</a>
+      <span>{{ book.data.completed | postDate }} ({{ book.data.rating }})</span>
+    </li>
+    {%- endfor -%}
+  </ul>
+</main>
