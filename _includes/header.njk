@@ -1,0 +1,17 @@
+<header>
+    <h1 class="text-zinc-200 text-3xl"><a href="{{ '/' | url }}">Graham Marlow</a></h1>
+
+    <nav class="text-zinc-300">
+      <ul class="inline-flex">
+        <li class="mr-5">
+          <a class="{{ 'text-zinc-200 underline decoration-pink-500/70 hover:decoration-pink-500' if '/' === page.url or '/words' in page.url }}" href="{{ '/' | url }}">words</a>
+        </li>
+        <li class="mr-5">
+          <a class="{{ 'text-zinc-200 underline decoration-pink-500/70 hover:decoration-pink-500' if '/reading' in page.url }}" href="{{ '/reading' | url }}">reading</a>
+        </li>
+        <li>
+          <a class="{{ 'text-zinc-200 underline decoration-pink-500/70 hover:decoration-pink-500' if '/about' in page.url }}" href="{{ '/about' | url }}">about</a>
+        </li>
+      </ul>
+    </nav>
+</header>

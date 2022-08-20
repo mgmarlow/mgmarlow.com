@@ -1,8 +1,6 @@
 ---
-layout: post.njk
 title: introducing rescript
 date: 2022-01-10
-tags: post
 ---
 
 # Introducing ReScript

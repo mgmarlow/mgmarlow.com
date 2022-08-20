@@ -1,0 +1,22 @@
+---
+title: mgmarlow.com
+layout: layouts/main.njk
+---
+
+<div class="prose prose-invert">
+  <p>
+    Words by Graham Marlow.
+    <a href="{{ '/feed.xml' | url }}">atom/rss</a>
+  </p>
+
+  <main>
+    <ul class="p-0">
+      {%- for post in collections.post | reverse -%}
+        <li class="flex justify-between pl-0 flex-col md:flex-row">
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          <span>{{ post.data.date | postDate }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </main>
+</div>
