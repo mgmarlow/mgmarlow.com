@@ -5,7 +5,7 @@ layout: layouts/post.njk
 
 I'm Graham, a software engineer who spends too much time on the internet.
 
-I like to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/words/2022-05-02-learning-emacs' | url }}), and contribute to [open source](https://github.com/mgmarlow/). You can read my [articles]({{ '/' | url }}) on this blog, or subscribe to the [RSS feed]({{ '/feed.xml' | url }}). Some of my recent projects include [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [swapper](https://mgmarlow.itch.io/swapper), [knave-tools](https://github.com/mgmarlow/knave-tools).
+I like to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/words/2022-05-02-learning-emacs' | url }}), and contribute to [open source](https://github.com/mgmarlow/). You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}). Some of my recent projects include [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [swapper](https://mgmarlow.itch.io/swapper), [knave-tools](https://github.com/mgmarlow/knave-tools).
 
 Check out my emacs configuration: [.emacs.d/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
 
