@@ -3,9 +3,11 @@ title: about - mgmarlow.com
 layout: layouts/post.njk
 ---
 
-I'm Graham, a software engineer who spends too much time on the internet.
+I'm Graham, a software egnineer who spends too much time on the internet.
 
-You can play some of my released games on [itch.io](https://mgmarlow.itch.io/) or browse my open source projects are hosted on [Github](https://github.com/mgmarlow/). Here are some highlights: [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [knave-tools](https://github.com/mgmarlow/knave-tools), [swapper](https://mgmarlow.itch.io/swapper).
+I like to [build games](https://mgmarlow.itch.io/), write about my <a href="{{ '/words/2022-05-02-learning-emacs' | url }}">Emacs obsession</a>, and contribute to [open source](https://github.com/mgmarlow/). Some project highlights: [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [knave-tools](https://github.com/mgmarlow/knave-tools), [swapper](https://mgmarlow.itch.io/swapper).
+
+Stay up-to-date with my [.emacs.d/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
 
 This site is ad-free and doesn't include any trackers. If you'd like to support my work you can [buy me a coffee](https://www.buymeacoffee.com/mgmarlow).
 
