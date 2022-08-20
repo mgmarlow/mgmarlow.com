@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn build && concurrently \"eleventy --serve --output=out\" \"yarn tw:start -w\"",
-    "build": "eleventy --output=out && yarn tw:build",
+    "start": "yarn build && concurrently \"eleventy --serve --output=out\" \"yarn tw:start -w\" \"yarn js:start\"",
+    "build": "eleventy --output=out && yarn tw:build && yarn js:build",
     "tw:start": "tailwindcss -i index.css -o out/index.css",
-    "tw:build": "tailwindcss -i index.css -o out/index.css --minify"
+    "tw:build": "tailwindcss -i index.css -o out/index.css --minify",
+    "js:start": "esbuild javascripts/main.js --bundle --outfile=out/bundle.js --watch",
+    "js:build": "esbuild javascripts/main.js --bundle --outfile=out/bundle.js --minify"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
@@ -16,6 +18,7 @@
     "tailwindcss": "^3.0.1"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "esbuild": "^0.15.5"
   }
 }
