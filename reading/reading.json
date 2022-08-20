@@ -1,4 +1,4 @@
 {
   "tags": "book",
-  "layout": "layouts/post.njk"
+  "layout": "layouts/book.njk"
 }

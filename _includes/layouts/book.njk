@@ -1,0 +1,9 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+  <article class="prose dark:prose-invert">
+    <p><strong>{{ title }}</strong> by {{ author }}<br />Finished: {{ date | postDate }}<br />Rated: {{ rating }}/5</p>
+
+    {{ content | safe }}
+  </article>
+{% endblock %}
