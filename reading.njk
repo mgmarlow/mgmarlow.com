@@ -1,0 +1,20 @@
+---
+title: reading - mgmarlow.com
+layout: layouts/main.njk
+---
+
+<div class="prose dark:prose-invert">
+  <p>Some things I've been reading.</p>
+
+  <main>
+    <ul class="pl-0">
+      {%- for book in collections.book | reverse -%}
+        <li class="flex justify-between pl-0 flex-col md:flex-row">
+          <a href="{{ book.url | url }}">{{ book.data.title }}</a>
+          <span>{{ book.data.date | postDate }} ({{ book.data.rating }})</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </main>
+</div>
+

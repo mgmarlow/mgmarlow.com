@@ -1,0 +1,24 @@
+<header class="flex justify-between text-slate-700 dark:text-slate-200">
+  <div>
+    <h1 class="text-3xl"><a href="{{ '/' | url }}">Graham Marlow</a></h1>
+
+    <nav>
+      <ul class="inline-flex">
+        <li class="mr-5">
+          <a class="{{ 'active-link' if '/' === page.url or '/words' in page.url }}" href="{{ '/' | url }}">words</a>
+        </li>
+        <li class="mr-5">
+          <a class="{{ 'active-link' if '/reading' in page.url }}" href="{{ '/reading' | url }}">reading</a>
+        </li>
+        <li>
+          <a class="{{ 'active-link' if '/about' in page.url }}" href="{{ '/about' | url }}">about</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <button id="dark-mode-toggle">
+    <img class="moon hidden dark:inline-block w-6 h-6" src="{{ '/moon.svg' | url }}" alt="Toggle light mode" />
+    <img class="sun dark:hidden w-6 h-6" src="{{ '/sun.svg' | url }}" alt="Toggle dark mode" />
+  </button>
+</header>
