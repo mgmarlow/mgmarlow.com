@@ -17,7 +17,7 @@
     </nav>
   </div>
 
-  <button id="dark-mode-toggle">
+  <button data-controller="dark-mode" data-action="click->dark-mode#toggle">
     <img class="moon hidden dark:inline-block w-6 h-6" src="{{ '/moon.svg' | url }}" alt="Toggle light mode" />
     <img class="sun dark:hidden w-6 h-6" src="{{ '/sun.svg' | url }}" alt="Toggle dark mode" />
   </button>

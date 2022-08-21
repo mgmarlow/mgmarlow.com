@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn build && concurrently \"eleventy --serve --output=out\" \"yarn tw:start -w\" \"yarn js:start\"",
+    "start": "yarn build && concurrently \"eleventy --serve --output=out\" \"yarn tw:start\" \"yarn js:start\"",
     "build": "eleventy --output=out && yarn tw:build && yarn js:build",
-    "tw:start": "tailwindcss -i index.css -o out/index.css",
+    "tw:start": "tailwindcss -i index.css -o out/index.css -w",
     "tw:build": "tailwindcss -i index.css -o out/index.css --minify",
     "js:start": "esbuild javascripts/main.js --bundle --outfile=out/bundle.js --watch",
     "js:build": "esbuild javascripts/main.js --bundle --outfile=out/bundle.js --minify"
@@ -13,11 +13,10 @@
   "dependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "@hotwired/stimulus": "^3.1.0",
     "@tailwindcss/typography": "^0.5.1",
     "luxon": "^2.3.0",
-    "tailwindcss": "^3.0.1"
-  },
-  "devDependencies": {
+    "tailwindcss": "^3.0.1",
     "concurrently": "^7.1.0",
     "esbuild": "^0.15.5"
   }
