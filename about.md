@@ -1,6 +1,6 @@
 ---
 title: about - mgmarlow.com
-layout: layouts/post.njk
+layout: layouts/page.njk
 ---
 
 I'm Graham, a software engineer who spends too much time on the internet.
