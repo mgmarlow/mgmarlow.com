@@ -1,9 +1,7 @@
 ---
-title: revisiting rescript
+title: Revisiting ReScript
 date: 2021-12-11
 ---
-
-# Revisiting ReScript
 
 When I first started looking at ReScript two years ago it was a project under another name: Reason. Derived from OCaml, Reason promised type safe code and powerful functional primitives without ditching the JavaScript ecosystem. It was created by Jordan Walke, the creator of React, and boasted adoption in Facebook's core messaging product, [Facebook Messenger](https://reasonml.github.io/blog/2017/09/08/messenger-50-reason).
 

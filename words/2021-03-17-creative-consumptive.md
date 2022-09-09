@@ -1,9 +1,7 @@
 ---
-title: creative-consumptive entertainment
+title: Creative-consumptive entertainment
 date: 2021-03-17
 ---
-
-# Theories on creative-consumptive entertainment
 
 Since discovering [a discussion on Hacker News](https://news.ycombinator.com/item?id=20781463) about the perils of "consumptive entertainment", I doubt my self-worth every time I sit down to play a video game. I could be doing something productive. Instead, I stare at my Steam library, guilt and indecision cycling endlessly.
 

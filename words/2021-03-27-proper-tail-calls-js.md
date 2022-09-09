@@ -1,9 +1,7 @@
 ---
-title: what happened to proper tail calls in JS
+title: What happened to proper tail calls in JavaScript?
 date: 2021-03-27
 ---
-
-# What happened to proper tail calls in JavaScript?
 
 Proper tail calls (PTC) is a programming language feature that enables memory-efficient recursive algorithms. I'm not going to belabor the details of proper tail calls or how it pertains to JavaScript, as [Dr. Axel's article](https://2ality.com/2015/06/tail-call-optimization.html) already offers those explanations. Instead, I'm going to discuss the evolution of the feature in JavaScript since its genesis in ECMAScript 2015.
 

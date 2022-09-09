@@ -1,9 +1,7 @@
 ---
-title: statues of piranesi
+title: Statues of Piranesi
 date: 2021-12-19
 ---
-
-# Statues of Piranesi
 
 After finishing _[Piranesi](https://bookshop.org/books/piranesi-9781432886578/9781635575637)_, my thoughts and attention have been captured by the influences of its setting. In particular, the marble statues that fill Piranesi’s residence, the House.
 

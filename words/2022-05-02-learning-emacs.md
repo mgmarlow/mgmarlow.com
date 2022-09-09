@@ -1,9 +1,7 @@
 ---
-title: emacs from scratch
+title: Emacs from scratch
 date: 2022-05-08
 ---
-
-# Emacs from Scratch
 
 Like any self-respecting programmer, I often find myself struggling with text editor envy. This time, like the three previous times, the source of that envy is [Emacs](https://www.gnu.org/software/emacs/). All it takes is a stray link to [emacsrocks](https://emacsrocks.com/) and I'm back in that vicious cycle.
 

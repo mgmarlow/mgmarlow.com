@@ -2,6 +2,12 @@
 
 {% block content %}
   <article class="prose dark:prose-invert">
+    <div>
+      <h1 class="mb-0">{{ title }}</h1>
+      <p class="mt-2 mb-6">
+        Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em>
+      </p>
+    </div>
     {{ content | safe }}
   </article>
 {% endblock %}
