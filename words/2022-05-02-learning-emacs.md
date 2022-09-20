@@ -1,7 +1,18 @@
 ---
 title: Emacs from scratch
 date: 2022-05-08
+updated_at: 2022-09-19
 ---
+
+**Edit**
+
+Four months after writing this article and I'm still using Emacs full-time with my own, custom configuration. I continue to find great pleasure in extending my setup with small snippets I stumble upon from Emacs hackers far wiser than myself. Those tweaks aside, my [current configuration](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el) is mostly stable.
+
+I maintain the opinion that creating your own Emacs configuration is not nearly as daunting as is often presented. With a few tweaks to the base defaults (technomancy's [better-defaults](https://git.sr.ht/~technomancy/better-defaults) is a great place to start) you can be up-and-running with an editor that looks and feels far closer to modern alternatives. A few packages later and you're well on your way to Emacs nirvana.
+
+For those of you who have decided to build your own configuration from scratch: enjoy the process! The greatest thing about Emacs is the satisfaction of building a tool to suit your preferences. I hope this article helps you on that journey.
+
+**Original article**
 
 Like any self-respecting programmer, I often find myself struggling with text editor envy. This time, like the three previous times, the source of that envy is [Emacs](https://www.gnu.org/software/emacs/). All it takes is a stray link to [emacsrocks](https://emacsrocks.com/) and I'm back in that vicious cycle.
 
@@ -11,7 +22,7 @@ What has changed is my fundamental approach to learning Emacs. Rather than reach
 
 This effort, previously believed insurmountable, was easy and educational. With just a few packages, I managed to match the functionality of my primary text editor. Most importantly, I found myself reaching for Emacs's built-in help system instead of scouring the web, reinforcing my familiarity with the tool and accelerating my proficiency.
 
-Prebuilt distributions are an awesome demonstration of what is possible with Emacs, but I don't think they're a good introduction to the editor. Instead, I think the best way to get started with Emacs is with a minimum-viable configuration. Just enough stuff to bring Emacs up-to-par with a modern editor and nothing else.
+Prebuilt distributions are an awesome demonstration of what is possible with Emacs, but I don't think they're a good introduction to the editor. Instead, I think the best way to get started with Emacs is with a minimum-viable configuration. Just enough stuff to bring Emacs up to par with a modern editor and nothing else.
 
 Follow along with the rest of this article and you'll have your own, very capable Emacs ready for experimentation.
 
@@ -47,25 +58,28 @@ mkdir ~/.emacs.d/
 Back in Emacs, make a new file with `M-x find-file`, or the following keybinding:
 
 ```
-C-x C-f ~/.emacs.d/init.el RET`
+C-x C-f ~/.emacs.d/init.el RET
 ```
 
-This will create a new Emacs Lisp file `init.el` in your Emacs configuration directory. Emacs will automatically load this file on startup.
+This will create a new Emacs Lisp file, `init.el`, in your Emacs configuration directory. Emacs will automatically load this file on startup.
 
 From here, you can go ahead and start making some changes to your editor theme:
 
 ```
 ;; Load a dark mode theme
 (load-theme 'deeper-blue t)
-
-;; Disable menu bar, scroll bar, and tool bar for a
-;; nice, minimalist UI. Totally optional.
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 ```
 
-I recommend keeping around the startup screen for now, since it has a nice and accessible link to the tutorial.
+Although many guides will recommend removing the ugly menu/tool bars at the top of your editor, I think it's a good idea to keep them around until you're more comfortable. They may offend your sensibilities, but they also may prevent burnout caused by forgetting basic editor functions.
+
+That said, if you want to remove them you can do so with the following code:
+
+```
+;; Disable menu bar, scroll bar, and tool bar
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+```
 
 After saving, you can apply the changes from your configuration file by closing Emacs and re-opening it. Alternatively, you can apply the changes immediately in Emacs by using the command `M-x eval-buffer`.
 
@@ -111,32 +125,20 @@ Although you could manage your key bindings, mappings, custom variables, and hoo
 
 ## Time for the good stuff
 
-With some basic configuration out of the way and `use-package` ready to go, it's time to start extending Emacs.
+There are only two packages that I consider mandatory for a fresh Emacs install and we've already prepared one of them (`use-package`). The other one is [Ivy](https://github.com/abo-abo/swiper), a text completion framework that I find much more usable than the Emacs default.
 
-I've narrowed down the list of mandatory packages to just two:
-
-- [Ivy](https://github.com/abo-abo/swiper): text completion that's way better than the Emacs default
-- [Projectile](https://projectile.mx/): project directory management and navigation
-
-Add these two packages to your `~/.emacs.d/init.el`:
+Add Ivy to your `~/.emacs.d/init.el`:
 
 ```
 (use-package ivy
-  :ensure t
-  :config
-  (ivy-mode 1))
-
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1)
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)))
+  :ensure t     ; Install the package if it isn't already
+  :config       ; Execute code after a package is loaded
+  (ivy-mode 1)) ; Activate ivy-mode
 ```
 
 ### Ivy
 
-As mentioned previously, Emacs comes packed with useful features. However, finding and remembering these features can be a massive undertaking in its own regard.
+As mentioned previously, Emacs comes packed with useful features. However, finding and remembering these features can be a massive undertaking on its own.
 
 Ivy helps alleviate this issue by fundamentally changing the way that Emacs text completion works. When text completion activates, e.g. when executing a command with `M-x`, Ivy shows you all possible matches immediately in a mini-buffer.
 
@@ -152,34 +154,37 @@ dired-find-file-other-window
 
 Rather than needing to remember exact function names or struggle with tab-based completion, Ivy gives immediate feedback as you search through your available Emacs commands.
 
-I can't help but underscore how valuable this package is for learning Emacs. Before Ivy, I was constantly referencing an Emacs cheatsheet to remember basic operations. After Ivy, I realized that you only need to remember two things:
+I can't help but emphasize how valuable this package is for learning Emacs. Before Ivy, I was constantly referencing an Emacs cheatsheet to remember basic operations. After Ivy, I realized that you only need to remember two things:
 
 1. Execute any Emacs command with `M-x <command>`
 2. Discover a keybinding with `M-x where-is RET <command> RET`
 
 As long as you're familiar with basic Emacs terminology (e.g. buffers, windows, and frames) every Emacs command is available to you with a quick search.
 
-### Projectile
+### Project.el
 
-> **Edit**: Since writing this article, I have swapped over to [project.el](https://github.com/emacs-mirror/emacs/blob/master/lisp/progmodes/project.el) instead of Projectile since it ships with Emacs 26+ and covers all of my needs. If you need something more featureful, Projectile is still a great option. Otherwise, learn how to use project.el with `C-x p C-h` or the [manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html).
+> **Edit**: This used to be a section about [Projectile](https://github.com/bbatsov/projectile), a package that provides project navigation utilities to Emacs. Since writing this article, I've actually found the default Emacs package `project.el` to be a completely viable alternative, no extra package needed. YMMV, so definitely check out Projectile if you need more than is provided by `project.el`.
 
-Even with Ivy, navigating between files in a project can be a bit cumbersome if you're only using `M-x find-file`. Projectile solves this problem by giving you a ton of new tools built around a project directory.
+Navigating files with `C-x C-f` is incredibly cumbersome, particularly for large projects. Far better is the Emacs Project framework, [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html). As long as you have a project that is initialized with `git`, you can easily traverse its files with Ivy and search its contents with grep.
 
-A project in projectile parlance is basically just a directory that is version controlled. Once you open up a project with `S-p p <project path>`, projectile provides you with a bunch of commands to help navigate that project.
+First, open up a project by browsing to a version-controlled file with `C-x C-f`. You'll now be able to use the `project.el` commands to navigate this project:
 
-I find myself using the following commands most often:
+- `C-x p f`: Visit a file in the current project.
+- `C-x p g`: Find matches for a regexp in all files in the current project.
 
-- `S-p f`: find file in project
-- `S-p s g`: search for a given term in every file in your project
+As soon as you've opened a project one time, it'll be available in the project cache. You can browse any previously-visited projects on your system with `C-x p p`.
 
-## Honorable mentions
+## Next steps
 
-I hope this minimal configuration helps kickstart your Emacs journey like it did mine.
+With `use-package`, `Ivy`, and the basics of `project.el` under your fingertips, you're ready to explore the rest that Emacs has to offer. Here are a few branching points that I would suggest based on your goals.
 
-By design I've left off a ton of useful packages and settings that you may eventually want to add to your own configuration. Among these are some honorable mentions that serve as great next steps:
+- If you want your Emacs experience to have IDE-like code-completion, look into [company-mode](https://company-mode.github.io/) and [lsp-mode](https://emacs-lsp.github.io/lsp-mode/).
+- If you want to be amazed by one of the best git interfaces in the world of text editors, dive into [Magit](https://magit.vc/).
+- If you're interested in [org-mode](https://orgmode.org/) and follow the Zettelkasten hype train, read all about [org-roam](https://www.orgroam.com/).
 
-- [Magit](https://magit.vc/): fully-featured git interface
-- [lsp-mode](https://emacs-lsp.github.io/lsp-mode/): LSP for Emacs
-- [company-mode](https://company-mode.github.io/): code completion framework
+Outside of new packages, I also recommend reading open source Emacs configurations out in the wild. Here are a few projects to take inspiration from:
 
-Check out my full configuration here: [dotfiles/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
+- Technomancy's [Better defaults](https://git.sr.ht/~technomancy/better-defaults)
+- System Crafter's [Crafted Emacs](https://github.com/SystemCrafters/crafted-emacs/)
+
+Welcome to your new Emacs journey. I hope that like me you find Emacs to be both an incredible tool and an incredible joy to extend.
