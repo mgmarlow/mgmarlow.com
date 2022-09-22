@@ -4,10 +4,7 @@ layout: layouts/main.njk
 ---
 
 <div class="prose dark:prose-invert">
-  <p>
-    Words by Graham Marlow.
-    <a href="{{ '/feed.xml' | url }}">atom/rss</a>
-  </p>
+  <h1>Words</h1>
 
   <main>
     <ul class="p-0">
@@ -18,5 +15,6 @@ layout: layouts/main.njk
         </li>
       {%- endfor -%}
     </ul>
+    <a href="{{ '/feed.xml' | url }}">atom/rss</a>
   </main>
 </div>

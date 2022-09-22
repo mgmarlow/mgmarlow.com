@@ -14,15 +14,19 @@
     <script src="{{ '/bundle.js' | url }}"></script>
   </head>
   <body class="bg:white dark:bg-slate-800 text-slate-500 dark:text-slate-400">
-    <div class="max-w-prose mx-auto md:mt-10 mb-10 p-3 md:p-0">
+    <div class="p-3">
       {% include "header.njk" %}
-
-      <main class="my-10">
-      {% block content %}
-        {{ content | safe }}
-      {% endblock %}
+    </div>
+    
+    <div class="max-w-prose mx-auto md:mt-10 mb-10 p-3 md:p-0">
+      <main class="my-5 sm:my-10">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
       </main>
-
+    </div>
+    
+    <div class="mb-6 p-3 sm:p-0">
       {% include "footer.njk" %}
     </div>
   </body>
