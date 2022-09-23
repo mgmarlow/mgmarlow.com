@@ -6,6 +6,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
+      serif: ['Libre Baskerville', 'serif'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
