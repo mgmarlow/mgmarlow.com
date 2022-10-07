@@ -83,6 +83,40 @@ That said, if you want to remove them you can do so with the following code:
 
 After saving, you can apply the changes from your configuration file by closing Emacs and re-opening it. Alternatively, you can apply the changes immediately in Emacs by using the command `M-x eval-buffer`.
 
+## Sensible defaults
+
+After you theme Emacs to your liking, there are a few settings that I think offer a substantial improvement over their defaults.
+
+These settings are either sourced from [better-defaults](https://git.sr.ht/~technomancy/better-defaults) and [crafted-emacs](https://github.com/SystemCrafters/crafted-emacs), two great reference configurations, or from tweaking the performance of some compute-heavy packages like [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/performance/).
+
+First up are some performance threshold tweaks that put Emacs more inline with modern editors:
+
+```
+(setq gc-cons-threshold 100000000) ; 100 mb
+(setq read-process-output-max (* 1024 1024)) ; 1mb
+```
+
+The remaining recommendations are more personal in nature. I'd urge you to read about each of these options and decide for yourself whether you'd like to include them. In particular, you may find yourself enjoying the customization user interface that ships with Emacs more than me: [`M-x customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html).
+
+```
+;; Auto-refresh buffers when files on disk change
+(global-auto-revert-mode t)
+
+;; Unique buffer names for matching files
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+;; Place backups in a separate folder
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq auto-save-file-name-transforms `((".*" "~/.saves/" t)))
+
+;;; Emacs customize-option
+;; Store automatic customization options in a gitignored file.
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
+```
+
 ## Get ready for packages
 
 As demonstrated through the tutorial, Emacs ships with a bunch of useful editing features. That said, there are a few third-party tools that greatly improve the overall experience, especially when getting started. These tools are available in the form of Emacs Lisp packages.
