@@ -1,7 +1,7 @@
 ---
 title: Emacs from scratch
 date: 2022-05-08
-updated_at: 2022-09-19
+updated_at: 2022-10-13
 ---
 
 **Edit**
@@ -70,7 +70,7 @@ From here, you can go ahead and start making some changes to your editor theme:
 (load-theme 'deeper-blue t)
 ```
 
-Although many guides will recommend removing the ugly menu/tool bars at the top of your editor, I think it's a good idea to keep them around until you're more comfortable. They may offend your sensibilities, but they also may prevent burnout caused by forgetting basic editor functions.
+Although many guides will recommend removing the ugly menu/tool bars at the top of your editor, I think it's a good idea to keep them around until you're more comfortable with Emacs keybindings. The very sight of them may offend your sensibilities, but at least they can help you when you forget basic editor functions.
 
 That said, if you want to remove them you can do so with the following code:
 
@@ -85,33 +85,36 @@ After saving, you can apply the changes from your configuration file by closing 
 
 ## Sensible defaults
 
-After you theme Emacs to your liking, there are a few settings that I think offer a substantial improvement over their defaults.
+Once Emacs is themed to your preference, I'd recommend tweaking some of the built-in settings with "better" defaults. Emacs has been around for a long time (as you can probably tell by the default theme) and these settings put it more in line with modern editors.
 
-These settings are either sourced from [better-defaults](https://git.sr.ht/~technomancy/better-defaults) and [crafted-emacs](https://github.com/SystemCrafters/crafted-emacs), two great reference configurations, or from tweaking the performance of some compute-heavy packages like [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/performance/).
+My recommendations are either sourced from other configuration files I found in the wild ([better-defaults](https://git.sr.ht/~technomancy/better-defaults) and [crafted-emacs](https://github.com/SystemCrafters/crafted-emacs) are two great examples) or from tweaking the performance of some CPU-intensive packages like [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/performance/).
 
-First up are some performance threshold tweaks that put Emacs more inline with modern editors:
+First up are some performance threshold tweaks that will help Emacs run faster on a modern machine. Recall that you can look up the help documentation of any of these variables by invoking `C-h v`, or `M-x describe-variable`.
 
 ```
 (setq gc-cons-threshold 100000000) ; 100 mb
 (setq read-process-output-max (* 1024 1024)) ; 1mb
 ```
 
-The remaining recommendations are more personal in nature. I'd urge you to read about each of these options and decide for yourself whether you'd like to include them. In particular, you may find yourself enjoying the customization user interface that ships with Emacs more than me: [`M-x customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html).
+The remaining recommendations are more personal in nature. I'd urge you to read about each of these options and decide for yourself whether you'd like to include them. In particular, you may find yourself enjoying the customization UI that ships with Emacs ([`M-x customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)) more than me.
 
 ```
-;; Auto-refresh buffers when files on disk change
+;; Auto-refresh buffers when files on disk change.
 (global-auto-revert-mode t)
 
-;; Unique buffer names for matching files
+;; Ensure unique names when matching files exist in the buffer.
+;; e.g. This helps when you have multiple copies of "main.rs"
+;; open in different projects. It will add a "myproj/main.rs"
+;; prefix when it detects matching names.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; Place backups in a separate folder
+;; Place backups in a separate folder.
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq auto-save-file-name-transforms `((".*" "~/.saves/" t)))
 
-;;; Emacs customize-option
-;; Store automatic customization options in a gitignored file.
+;; I store automatic customization options in a gitignored file,
+;; but this is definitely a personal preference.
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
@@ -119,9 +122,9 @@ The remaining recommendations are more personal in nature. I'd urge you to read 
 
 ## Get ready for packages
 
-As demonstrated through the tutorial, Emacs ships with a bunch of useful editing features. That said, there are a few third-party tools that greatly improve the overall experience, especially when getting started. These tools are available in the form of Emacs Lisp packages.
+While Emacs ships with a ton of useful features, we're all here for the packages. This is the moment where you can really start turning your Emacs from text editor status into full-blown operating system.
 
-By default, Emacs comes with a curated package registry in the form of [GNU Elpa](http://elpa.gnu.org/). You'll want to extend this default list of packages with those from a larger, also curated list called [MELPA](https://melpa.org/).
+By default, Emacs comes with a curated package registry in the form of [GNU Elpa](http://elpa.gnu.org/). You'll want to extend this default list of packages with those from a larger, also curated list called [MELPA](https://melpa.org/). With these two lists (and Emacs's built-in packages), you can find just about everything you'll ever need.
 
 Add the following lines to your `~/.emacs.d/init.el`:
 
@@ -153,9 +156,9 @@ With MELPA ready to go, it's time to install your first package. Add the followi
 
 [`use-package`](https://github.com/jwiegley/use-package) is a very deliberate first install, as you'll use it instead of `package-install` to install all of your other packages.
 
-Why not just keep installing packages with `(package-install)`? The reason has to do with the configuration that you'll add to the packages after you install them.
+Why not just keep installing packages with `package-install`? The reason has to do with the customization that you'll add to the packages after you install them.
 
-Although you could manage your key bindings, mappings, custom variables, and hooks on your own, `use-package` bundles all of those configuration settings into a convenient and well-organized API. Overall, it will make it easier to install new packages and keep your `init.el` file organized.
+`use-package` bundles your keybindings, custom variables, package hooks, and dependencies together in a convenient and well-organized API. While you could manage all of these details manually, it's very convenient to use `use-package` instead. It makes it easier to install new packages while keeping your `init.el` organized and clean.
 
 ## Time for the good stuff
 
@@ -214,7 +217,7 @@ With `use-package`, `Ivy`, and the basics of `project.el` under your fingertips,
 
 - If you want your Emacs experience to have IDE-like code-completion, look into [company-mode](https://company-mode.github.io/) and [lsp-mode](https://emacs-lsp.github.io/lsp-mode/).
 - If you want to be amazed by one of the best git interfaces in the world of text editors, dive into [Magit](https://magit.vc/).
-- If you're interested in [org-mode](https://orgmode.org/) and follow the Zettelkasten hype train, read all about [org-roam](https://www.orgroam.com/).
+- If you're interested in [org-mode](https://orgmode.org/) and follow the Zettelkasten hype train, read all about [org-roam](https://www.orgroam.com/) or [denote](https://protesilaos.com/emacs/denote).
 
 Outside of new packages, I also recommend reading open source Emacs configurations out in the wild. Here are a few projects to take inspiration from:
 
