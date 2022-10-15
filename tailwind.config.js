@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ['Inter', '-apple-system', 'Segoe UI', 'Helvetica', 'sans-serif'],
       serif: ['Libre Baskerville', 'serif'],
     },
   },
