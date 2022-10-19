@@ -2,6 +2,7 @@
 title: Emacs from scratch
 date: 2022-05-08
 updated_at: 2022-10-13
+tags: emacs
 ---
 
 **Edit**

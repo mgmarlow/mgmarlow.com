@@ -1,6 +1,7 @@
 ---
 title: Building Emacs from source on MacOS
 date: 2022-09-08
+tags: emacs
 ---
 
 This is a guide for building Emacs from source for Mac OS (tested on M1). Included are links to the source documentation to help guide you through the process.

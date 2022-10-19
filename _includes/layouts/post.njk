@@ -7,6 +7,13 @@
       <p class="my-0">
         <small>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em></small>
       </p>
+      <p class="my-0">
+        {% for tag in tags %}
+          {% if tag !== "post" %}
+            <a href="{{ '/tags/' + tag | url }}"><small>{{ tag }}</small></a>
+          {% endif %}
+        {% endfor %}
+      </p>
     </div>
     {{ content | safe }}
   </article>
