@@ -7,7 +7,7 @@ layout: layouts/page.njk
 
 I'm Graham, a software engineer who spends too much time on the internet.
 
-I like to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/words/2022-05-02-learning-emacs' | url }}), and contribute to [open source](https://github.com/mgmarlow/). You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}). Some of my recent projects include [shuffle hustle](https://shuffle-hustle.com), [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [swapper](https://mgmarlow.itch.io/swapper).
+I like to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/tags/emacs' | url }}), and contribute to [open source](https://github.com/mgmarlow/). You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}). Some of my recent projects include [shuffle hustle](https://shuffle-hustle.com), [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [swapper](https://mgmarlow.itch.io/swapper).
 
 I'm currently working on a programming podcast with my good friend [Nolan Sedley](https://nolansedley.netlify.app/). More details soon to come.
 
