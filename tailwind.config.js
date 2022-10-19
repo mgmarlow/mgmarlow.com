@@ -1,12 +1,13 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   darkMode: 'class',
   content: ['out/**/*.html'],
   safelist: [],
   theme: {
-    extend: {},
     fontFamily: {
-      sans: ['Inter', '-apple-system', 'Segoe UI', 'Helvetica', 'sans-serif'],
-      serif: ['Libre Baskerville', 'serif'],
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      serif: ['Libre Baskerville', ...defaultTheme.fontFamily.serif],
     },
   },
   plugins: [require('@tailwindcss/typography')],
