@@ -1,9 +1,10 @@
 ---
-title: The Puzzler
-author: A.J. Jacobs
+title: 'Reading: The Puzzler'
 date: 2022-09-22
-rating: 2
+tags: reading
 ---
+
+Talking about _The Puzzler_ by A.J. Jacobs.
 
 If you can ignore Jacobs musings on the virtues of puzzling (which is, despite the book's subtitle, mercifully light), _The Puzzler_ offers some entertaining stories about puzzle fanaticism. Just don't go in expecting much else.
 

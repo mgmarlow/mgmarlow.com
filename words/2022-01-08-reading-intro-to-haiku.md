@@ -1,9 +1,10 @@
 ---
-title: Intro to Haiku
-author: Harold Henderson
+title: 'Reading: Intro to Haiku'
 date: 2022-01-08
-rating: 4
+tags: reading
 ---
+
+Talking about _Intro to Haiku_ by Harold Henderson.
 
 The 17 syllable (5-7-5) structure of Japanese haiku doesn't necessarily translate well into English, so Henderson prefers English haiku in the realm of 12-15. There are a few interesting reasons for this difference:
 
