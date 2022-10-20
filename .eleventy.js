@@ -8,4 +8,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
   })
+
+  eleventyConfig.addFilter('excerpt', (post) => {
+    const content = post.replace(/(<([^>]+)>)/gi, "");
+    return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+  })
 }

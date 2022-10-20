@@ -4,15 +4,23 @@ layout: layouts/main.njk
 ---
 
 <div class="prose prose-lg dark:prose-invert">
-  <h1>Words</h1>
+  <h1>Articles</h1>
 
   <main>
     <ul class="p-0">
       {%- for post in collections.post | reverse -%}
-        <li class="flex justify-between pl-0 flex-col md:flex-row">
-          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-          <span>{{ post.data.date | postDate }}</span>
-        </li>
+        <h2 class="mb-0"><a class="font-bold no-underline" href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+        <p class="my-0">
+          <small>
+            {{ post.data.date | postDate }}
+            {% for tag in post.data.tags %}
+              {% if tag !== "post" %}
+                <a href="{{ '/tags/' + tag | url }}"><small>{{ tag }}</small></a>
+              {% endif %}
+            {% endfor %}
+          </small>
+        </p>
+        <p class="mt-0">{{ post.templateContent | excerpt }}</p>
       {%- endfor -%}
     </ul>
     <a href="{{ '/feed.xml' | url }}">atom/rss</a>
