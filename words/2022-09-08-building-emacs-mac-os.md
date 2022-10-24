@@ -44,15 +44,13 @@ Here is the list of options that are recommended for Mac OS. The description is 
 - `--with-ns`: use Nextstep (macOS Cocoa or GNUstep) windowing
   system. On by default on macOS
 - `--disable-silent-rules`: verbose build output (undo: "make V=0")
-- `--disable-ns-self-contained`: disable self contained build under NeXTstep
 
 Run the `configure` script with these options to create the `Makefile` you'll use to build Emacs.
 
 ```
 ./configure --with-native-compilation \
             --with-ns \
-            --disable-silent-rules \
-            --disable-ns-self-contained
+            --disable-silent-rules
 ```
 
 After this finishes, it's time to build Emacs proper.
@@ -69,16 +67,11 @@ This creates an Emacs binary at `src/emacs`. You can verify that everything work
 src/emacs -Q
 ```
 
-While you can continue to use `src/emacs` as your daily driver, it's more convenient to finish the install and have Emacs available at `/usr/local/bin/emacs`.
+After building Emacs, you'll want to assemble `Emacs.app` so you can execute Emacs directly from Spotlight like a normal Mac OS application.
 
 ```
 make install
-```
 
-Additionally, you'll want to move the `Emacs.app` package into `/Applications/` so you can execute Emacs directly from Spotlight. Since you built Emacs with native compilation enabled, you'll need to also include the `native-lisp/` directory into the `Emacs.app` package.
-
-```
-mv native-lisp/ nextstep/Emacs.app/Contents/
 mv nextstep/Emacs.app /Applications/Emacs.app
 ```
 
