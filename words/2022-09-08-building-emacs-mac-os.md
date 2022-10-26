@@ -41,8 +41,7 @@ You can view all of the available options for `configure` by passing in the `--h
 Here is the list of options that are recommended for Mac OS. The description is directly copied from the output of the previous command:
 
 - `--with-native-compilation`: compile with Emacs Lisp native compiler support
-- `--with-ns`: use Nextstep (macOS Cocoa or GNUstep) windowing
-  system. On by default on macOS
+- `--with-ns`: use Nextstep (macOS Cocoa or GNUstep) windowing system. On by default on macOS
 - `--disable-silent-rules`: verbose build output (undo: "make V=0")
 
 Run the `configure` script with these options to create the `Makefile` you'll use to build Emacs.
@@ -61,18 +60,26 @@ After this finishes, it's time to build Emacs proper.
 make
 ```
 
-This creates an Emacs binary at `src/emacs`. You can verify that everything worked properly by running Emacs with the `-Q` flag, which launches it with no configuration.
+This creates an Emacs binary at `src/emacs`. You can verify that everything worked properly by running `emacs -Q`, launching it with no configuration.
 
 ```
 src/emacs -Q
 ```
 
-After building Emacs, you'll want to assemble `Emacs.app` so you can execute Emacs directly from Spotlight like a normal Mac OS application.
+After building Emacs, you'll want to assemble `Emacs.app` so you can execute Emacs directly from Spotlight like a normal Mac OS application. Run the install script to build the Emacs package, then symlink the package to your `Applications` directory (described in [emacs/nextstep/INSTALL](https://github.com/emacs-mirror/emacs/blob/master/nextstep/INSTALL)):
 
 ```
 make install
 
-mv nextstep/Emacs.app /Applications/Emacs.app
+# Swap /User/you/ with your emacs directory
+ln -s /User/you/emacs/nextstep/Emacs.app /Applications
+```
+
+I also like to include `src` and `lib-src` on `PATH` so I can run Emacs from the command-line:
+
+```
+set PATH $HOME/projects/emacs/src $PATH
+set PATH $HOME/projects/emacs/lib-src $PATH
 ```
 
 Congratulations, you have officially built Emacs from source!
@@ -93,6 +100,7 @@ There could be a variety of reasons for `make` failing to build Emacs. That said
 ```
 # Clean out any dangling build artifacts
 make clean
+git clean -df
 
 make bootstrap
 ```
