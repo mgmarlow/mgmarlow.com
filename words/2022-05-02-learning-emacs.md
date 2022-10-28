@@ -34,7 +34,7 @@ After [downloading Emacs](https://www.gnu.org/software/emacs/), I recommend runn
 If looking at the default Emacs theme is too much to bear, swap to one of the dark-mode themes:
 
 ```
-M-x load-theme RET deeper-blue RET
+M-x load-theme RET deeper-blue
 ```
 
 > Remember: `C-<chr>` means hold the Control key while typing the character `<chr>`. `M-<chr>` means hold the Meta key (Alt on Windows) and pressing `<chr>`. (Emacs tutorial)
@@ -59,7 +59,7 @@ mkdir ~/.emacs.d/
 Back in Emacs, make a new file with `M-x find-file`, or the following keybinding:
 
 ```
-C-x C-f ~/.emacs.d/init.el RET
+C-x C-f ~/.emacs.d/init.el
 ```
 
 This will create a new Emacs Lisp file, `init.el`, in your Emacs configuration directory. Emacs will automatically load this file on startup.
@@ -161,68 +161,97 @@ Why not just keep installing packages with `package-install`? The reason has to 
 
 `use-package` bundles your keybindings, custom variables, package hooks, and dependencies together in a convenient and well-organized API. While you could manage all of these details manually, it's very convenient to use `use-package` instead. It makes it easier to install new packages while keeping your `init.el` organized and clean.
 
-## Time for the good stuff
+## The importance of text completion
 
-There are only two packages that I consider mandatory for a fresh Emacs install and we've already prepared one of them (`use-package`). The other one is [Ivy](https://github.com/abo-abo/swiper), a text completion framework that I find much more usable than the Emacs default.
+I know you're excited to install packages, but forgive me for a brief aside. By far the most important thing to configure in Emacs is your [completion framework](https://www.gnu.org/software/emacs/manual/html_node/emacs/Completion.html). Doing so will not only make Emacs more familiar when coming from existing editors, it will drive your ability to teach yourself Emacs _from within Emacs_.
 
-Add Ivy to your `~/.emacs.d/init.el`:
+But before you grab a text completion package off the internet, I think it's helpful to take a look at Emacs's built-in capabilities. Doing so will help you make some informed decisions about what features you'd like a text completion framework to fulfill.
 
-```
-(use-package ivy
-  :ensure t     ; Install the package if it isn't already
-  :config       ; Execute code after a package is loaded
-  (ivy-mode 1)) ; Activate ivy-mode
-```
+That said, the completion framework ecosystem within Emacs is nuanced and idiosyncratic, but I'll try my best to break it down.
 
-### Ivy
+When you attempt any operation that prompts you for text in Emacs, you'll be presented with a [minibuffer](https://www.gnu.org/software/emacs/manual/html_node/emacs/Minibuffer.html) asking for you to fill in that information. Oftentimes that information will be the path to a file or an Emacs Lisp function. In either of these cases it's vastly preferable to have Emacs fill in your text so you don't have to type it all in yourself (hence, completion).
 
-As mentioned previously, Emacs comes packed with useful features. However, finding and remembering these features can be a massive undertaking on its own.
+With the default Emacs completion framework, you allow Emacs to fill in text for you by mashing the `TAB` key endlessly. Go ahead and try it: `C-x C-f`, begin typing a path, then have Emacs autocomplete it with `TAB TAB`. Even worse is looking up an Emacs command with `M-x`. Try `M-x find TAB TAB`. Functional, sure. But also a surefire path to RSI.
 
-Ivy helps alleviate this issue by fundamentally changing the way that Emacs text completion works. When text completion activates, e.g. when executing a command with `M-x`, Ivy shows you all possible matches immediately in a mini-buffer.
+Luckily there are a few built-in alternatives, a subject to which Mickey Peterson [dedicates an entire blog post](https://www.masteringemacs.org/article/understanding-minibuffer-completion). I'll mention one here that is a personal favorite, `fido-vertical-mode` which uses Emacs [icomplete](https://www.gnu.org/software/emacs/manual/html_node/emacs/Icomplete.html) under the hood.
 
-For example, searching for "find file" commands:
+Give it a try and you'll immediately notice the difference:
 
 ```
-74 M-x find file
-projectile-find-file-other-window
-projectile--find-file
-dired-find-file-other-window
-...
+M-x fido-vertical-mode
 ```
 
-Rather than needing to remember exact function names or struggle with tab-based completion, Ivy gives immediate feedback as you search through your available Emacs commands.
+Try to lookup an Emacs command like `M-x find-file`. It even includes the keybindings in the margin!
 
-I can't help but emphasize how valuable this package is for learning Emacs. Before Ivy, I was constantly referencing an Emacs cheatsheet to remember basic operations. After Ivy, I realized that you only need to remember two things:
+This exact benefit is the reason I dedicated an entire section of this guide to your chosen completion framework. It makes it infinitely easier to lookup Emacs commands when searching for documentation or trying to remember the keybindings.
 
-1. Execute any Emacs command with `M-x <command>`
-2. Discover a keybinding with `M-x where-is RET <command> RET`
+## Vertico and Marginalia
+
+Now, if `fido-vertical-mode` works for you, great! No need to install a separate completion framework. However I find that an alternative, [Vertico](https://github.com/minad/vertico), offers both better performance and greater features.
+
+Vertico is built by [Daniel Mendler](https://github.com/minad) and integrates nicely into other tools by the same author, as well as Emacs built-ins. One I'll recommend alongside Vertico is [Marginalia](https://github.com/minad/marginalia), a package that adds more annotations to your completions. Similar to the keybindings in the earlier example with `M-x find-file`, Marginalia displays the beginning of the entire docstring.
+
+Install the packages with `use-package`:
+
+```
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
+(use-package marginalia
+  :after vertico
+  :ensure t
+  :init
+  (marginalia-mode))
+```
+
+Finally, I like to throw `savehist` in there as well so my recent completions appear at the top of the minibuffer. This one omits `:ensure t` since it ships with Emacs.
+
+```
+(use-package savehist
+  :init
+  (savehist-mode))
+```
+
+## Finding Help
+
+Your choice of completion framework is a huge benefit when learning Emacs, as the entire library of Emacs commands is available at your fingertips with `M-x`. As soon as I discovered Vertico and Marginalia I threw out my Emacs cheatsheet. When all of Emacs's documentation is so easily accessible, there's really no reason to keep one around for reference.
+
+When it comes to reaching out to Emacs for help, remember the following:
+
+1. You can execute any Emacs command with `M-x <command>`.
+2. Keybindings are available in the minibuffer thanks to Marginalia, but you can also discover them with `M-x where-is RET <command>`.
+3. You can view the documentation of any command you know how to press with `C-h c`. Try `C-h c RET C-x C-f`.
+4. `C-h ?` is an all-encompassing help menu for you to get your bearings.
 
 As long as you're familiar with basic Emacs terminology (e.g. buffers, windows, and frames) every Emacs command is available to you with a quick search.
 
-### Project.el
+## Project management with project.el
 
 > **Edit**: This used to be a section about [Projectile](https://github.com/bbatsov/projectile), a package that provides project navigation utilities to Emacs. Since writing this article, I've actually found the default Emacs package `project.el` to be a completely viable alternative, no extra package needed. YMMV, so definitely check out Projectile if you need more than is provided by `project.el`.
 
-Navigating files with `C-x C-f` is incredibly cumbersome, particularly for large projects. Far better is the Emacs Project framework, [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html). As long as you have a project that is initialized with `git`, you can easily traverse its files with Ivy and search its contents with grep.
+Navigating files with `C-x C-f` is incredibly cumbersome, particularly for large projects. Far better is the Emacs Project framework, [project.el](https://www.gnu.org/software/emacs/manual/html_node/emacs/Projects.html). As long as you have a project that is initialized with `git`, `project.el` lets you search files with minibuffer completion, grep queries with [xref](https://www.gnu.org/software/emacs/manual/html_node/emacs/Xref.html), and manage directories with [dired](https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
 
 First, open up a project by browsing to a version-controlled file with `C-x C-f`. You'll now be able to use the `project.el` commands to navigate this project:
 
 - `C-x p f`: Visit a file in the current project.
-- `C-x p g`: Find matches for a regexp in all files in the current project.
+- `C-x p g`: Grep a query across all files in the current project.
+- `C-x p d`: Open dired in the chosen directory.
 
 As soon as you've opened a project one time, it'll be available in the project cache. You can browse any previously-visited projects on your system with `C-x p p`.
 
 ## Next steps
 
-With `use-package`, `Ivy`, and the basics of `project.el` under your fingertips, you're ready to explore the rest that Emacs has to offer. Here are a few branching points that I would suggest based on your goals.
+With `use-package`, `Vertico`, and the basics of `project.el` under your fingertips, you're ready to explore the rest that Emacs has to offer. Here are a few branching points that I would suggest based on your goals.
 
-- If you want your Emacs experience to have IDE-like code-completion, look into [company-mode](https://company-mode.github.io/) and [lsp-mode](https://emacs-lsp.github.io/lsp-mode/).
+- If you want your Emacs experience to have IDE-like code-completion, look into [company-mode](https://company-mode.github.io/) and [eglot](https://github.com/joaotavora/eglot).
 - If you want to be amazed by one of the best git interfaces in the world of text editors, dive into [Magit](https://magit.vc/).
 - If you're interested in [org-mode](https://orgmode.org/) and follow the Zettelkasten hype train, read all about [org-roam](https://www.orgroam.com/) or [denote](https://protesilaos.com/emacs/denote).
 
-Outside of new packages, I also recommend reading open source Emacs configurations out in the wild. Here are a few projects to take inspiration from:
+Outside of new packages, I also recommend reading some open source Emacs configurations that are out in the wild. Here are a few projects I've taken inspiration from:
 
 - Technomancy's [Better defaults](https://git.sr.ht/~technomancy/better-defaults)
 - System Crafter's [Crafted Emacs](https://github.com/SystemCrafters/crafted-emacs/)
 
-Welcome to your new Emacs journey. I hope that like me you find Emacs to be both an incredible tool and an incredible joy to extend.
+Welcome to your new Emacs journey!
