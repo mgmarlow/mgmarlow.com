@@ -1,7 +1,7 @@
 ---
 title: Building Emacs from source on MacOS
 date: 2022-09-08
-updated_at: 2022-10-23
+updated_at: 2022-10-27
 tags: emacs
 ---
 
@@ -9,7 +9,8 @@ This is a guide for building Emacs from source for Mac OSX (tested on 12.4, M1) 
 
 ## Prerequisites
 
-- `libgccjit`: Install via [homebrew](https://formulae.brew.sh/formula/libgccjit) if you're building with native compilation.
+- Xcode command line tools
+- [`libgccjit`](https://formulae.brew.sh/formula/libgccjit), required for native compilation
 
 ## Building Emacs
 
@@ -38,23 +39,33 @@ You can view all of the available options for `configure` by passing in the `--h
 ./configure --help
 ```
 
-Here is the list of options that are recommended for Mac OS. The description is directly copied from the output of the previous command:
+Here is the list of options that are recommended for Mac OS, compiled from [various](https://github.com/d12frosted/homebrew-emacs-plus) [sources](https://github.com/mclear-tools/build-emacs-macos). I've included the `--help` output with each option:
 
 - `--with-native-compilation`: compile with Emacs Lisp native compiler support
+- `--with-json`: compile with native JSON support
 - `--with-ns`: use Nextstep (macOS Cocoa or GNUstep) windowing system. On by default on macOS
-- `--disable-silent-rules`: verbose build output (undo: "make V=0")
+- `--with-xwidgets`: enable use of xwidgets in Emacs buffers (requires macOS Cocoa, [more info](https://www.gnu.org/software/emacs/manual/html_node/elisp/Xwidgets.html))
+- `--without-dbus`: don't compile with D-Bus support ([more info](https://www.gnu.org/software/emacs/manual/html_mono/dbus.html))
+- `--without-compress-install`: don't compress some files (.el, .info, etc.) when installing
+- `--disable-silent-rules`: enable verbose build output
 
 Run the `configure` script with these options to create the `Makefile` you'll use to build Emacs.
 
 ```
 ./configure --with-native-compilation \
+            --with-json \
             --with-ns \
+            --with-xwidgets \
+            --without-dbus \
+            --without-compress-install \
             --disable-silent-rules
 ```
 
 After this finishes, it's time to build Emacs proper.
 
 ### Build emacs
+
+> Note: if `make` fails, take a look at "Troubleshooting" down below. Your best bet is to run `make bootstrap` instead.
 
 ```
 make
@@ -66,18 +77,22 @@ This creates an Emacs binary at `src/emacs`. You can verify that everything work
 src/emacs -Q
 ```
 
-After building Emacs, you'll want to assemble `Emacs.app` so you can execute Emacs directly from Spotlight like a normal Mac OS application. Run the install script to build the Emacs package, then symlink the package to your `Applications` directory (described in [emacs/nextstep/INSTALL](https://github.com/emacs-mirror/emacs/blob/master/nextstep/INSTALL)):
+After you've verified that everything is good to go, the last step is to assemble `Emacs.app` proper:
 
 ```
 make install
-
-# Swap /User/you/ with your emacs directory
-ln -s /User/you/emacs/nextstep/Emacs.app /Applications
 ```
 
-I also like to include `src` and `lib-src` on `PATH` so I can run Emacs from the command-line:
+You'll notice that a hefty `Emacs.app` application now lives in the `nextstep/` directory. Go ahead and move it into your `/Applications/` directory.
 
 ```
+mv nextstep/Emacs.app /Applications/
+```
+
+I also like to include `src` and `lib-src` on `PATH` so I can run Emacs from the CLI (particularly important for `emacsclient`):
+
+```
+# Syntax for fish shell
 set PATH $HOME/projects/emacs/src $PATH
 set PATH $HOME/projects/emacs/lib-src $PATH
 ```
@@ -95,15 +110,14 @@ Best of luck, new Emacs contributor!
 
 ## Troubleshooting
 
-There could be a variety of reasons for `make` failing to build Emacs. That said, one of the easiest ways to resolve most problems is to use the bootstrap script instead:
+If `make` fails, one of the easiest ways to resolve most problems is to use the bootstrap script instead:
 
 ```
 # Clean out any dangling build artifacts
 make clean
-git clean -df
 
 make bootstrap
 ```
 
-This is effectively a slower and more thorough build of the application, and successfully resolved a few issues I ran into when I updated from Emacs 28 to 29.
+This is effectively a "slower and more thorough" build of the application, and successfully resolved a few issues I ran into when I updated from Emacs 28 to 29.
 
