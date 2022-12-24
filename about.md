@@ -14,7 +14,7 @@ I'm currently working on a programming podcast with my good friend [Nolan Sedley
 ### Some links
 
 - Check out my emacs configuration: [.emacs.d/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
-- Contact me by email: <a href="mailto:graham@mgmarlow.com">graham@mgmarlow.com</a>.
+- Contact me by email: <a href="mailto:blog@mgmarlow.com">blog@mgmarlow.com</a>.
 - Support this site: [buy me a coffee](https://www.buymeacoffee.com/mgmarlow).
 
 ### About this site
