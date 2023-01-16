@@ -1,6 +1,7 @@
 ---
 title: Advent of Code with Common Lisp
 date: 2022-12-19
+tags: lisp
 ---
 
 One observation I've had working through [Advent of Code](https://adventofcode.com/) with Common Lisp is that the `LOOP` macro is an absolute powerhouse.

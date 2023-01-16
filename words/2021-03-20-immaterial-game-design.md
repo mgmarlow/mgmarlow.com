@@ -1,6 +1,7 @@
 ---
 title: Game design is immaterial
 date: 2021-03-20
+tags: gamedev
 ---
 
 Reading [Elements of Game Design](https://mitpress.mit.edu/books/elements-game-design) planted a splinter in my brain that I cannot stop fiddling with. On page 8, when discussing the game designer's role,
