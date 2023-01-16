@@ -18,7 +18,7 @@ pagination:
             {{ post.data.date | postDate }}
             {% for tag in post.data.tags %}
               {% if tag !== "post" %}
-                <a href="{{ '/tags/' + tag | url }}"><small>{{ tag }}</small></a>
+                <a class="ml-2 tag" href="{{ '/tags/' + tag | url }}">{{ tag }}</a>
               {% endif %}
             {% endfor %}
           </small>

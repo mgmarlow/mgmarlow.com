@@ -5,14 +5,16 @@
     <div class="mb-6">
       <h1 class="my-0">{{ title }}</h1>
       <p class="my-0">
-        <small>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em></small>
-      </p>
-      <p class="my-0">
-        {% for tag in tags %}
-          {% if tag !== "post" %}
-            <a href="{{ '/tags/' + tag | url }}"><small>{{ tag }}</small></a>
-          {% endif %}
-        {% endfor %}
+        <small>
+          <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em></span>
+          <span>
+            {% for tag in tags %}
+              {% if tag !== "post" %}
+                <a class="ml-2 tag" href="{{ '/tags/' + tag | url }}">{{ tag }}</a>
+              {% endif %}
+            {% endfor %}
+          </span>
+        </small>
       </p>
     </div>
     {{ content | safe }}
