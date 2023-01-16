@@ -5,11 +5,9 @@ layout: layouts/page.njk
 
 # About
 
-I'm Graham, a software engineer who spends too much time on the internet.
+Hello, I'm Graham. I'm a software engineer who likes to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/tags/emacs' | url }}), and occasionally contribute to [open source](https://github.com/mgmarlow/). Some of my recent projects include [swapper](https://mgmarlow.itch.io/swapper), [shuffle hustle](https://shuffle-hustle.com), and [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby).
 
-I like to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/tags/emacs' | url }}), and contribute to [open source](https://github.com/mgmarlow/). You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}). Some of my recent projects include [shuffle hustle](https://shuffle-hustle.com), [notion-sdk-ruby](https://github.com/mgmarlow/notion-sdk-ruby), [swapper](https://mgmarlow.itch.io/swapper).
-
-I'm currently working on a programming podcast with my good friend [Nolan Sedley](https://nolansedley.netlify.app/). More details soon to come.
+You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}), if that's your fancy.
 
 ### Some links
 
@@ -19,6 +17,6 @@ I'm currently working on a programming podcast with my good friend [Nolan Sedley
 
 ### About this site
 
-I built this site with [Eleventy, Tailwind, and Stimulus](https://github.com/mgmarlow/mgmarlow.com), though I tend to rebuild it yearly. This site is ad-free and doesn't include any trackers. If you'd like to support my work you can [buy me a coffee](https://www.buymeacoffee.com/mgmarlow).
+I built this site with [Eleventy](https://www.11ty.dev/), [Tailwind](https://tailwindcss.com/), and [Stimulus](https://stimulus.hotwired.dev/), though I tend to rebuild it yearly. This site is ad-free and doesn't include any trackers.
 
 
