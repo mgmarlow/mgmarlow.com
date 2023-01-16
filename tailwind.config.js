@@ -6,8 +6,7 @@ module.exports = {
   safelist: [],
   theme: {
     fontFamily: {
-      sans: ['Inter', ...defaultTheme.fontFamily.sans],
-      serif: ['Libre Baskerville', ...defaultTheme.fontFamily.serif],
+      sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [require('@tailwindcss/typography')],
