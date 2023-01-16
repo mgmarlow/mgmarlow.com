@@ -1,0 +1,12 @@
+---
+title: 'tags | mgmarlow.com'
+layout: layouts/page.njk
+---
+
+<h1>All tags</h1>
+
+<ul>
+  {% for tag in collections.allTags %}
+    <li><a href="{{ '/tags/' + tag | url }}">{{ tag }}</a></li>
+  {% endfor %}
+</ul>
