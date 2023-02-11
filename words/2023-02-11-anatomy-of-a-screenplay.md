@@ -83,3 +83,12 @@ Time to put your hard work to paper.
 4.  Lay out the major story beats (~15). Index cards are a great tool for this purpose, one beat per card.
 5.  Write your scenes.
 
+## Screenwriting and film
+
+There's nothing revolutionary here but it's interesting to see the guts of a movie exposed. Where do films deviate from these structures, and to what effect?
+
+[Campbellian archetypes](https://en.wikipedia.org/wiki/The_Hero_with_a_Thousand_Faces) tell us that storytelling is fundamental to humanity and that the stories themselves often map to a common structure. It's interesting to explore such structures and relate them to our own experience. Whether or not the [monomyth](https://en.wikipedia.org/wiki/Hero%27s_journey) is the beginning and end of storytelling doesn't dismiss its ubiquity in modern media.
+
+Here we see the same base structures in the form of the Save the Cat Beat Sheet. Perhaps part of the enjoyment we get from watching movies and listening to stories is the recognition of common patterns, conflicts, and themes. I suppose more generally that's a trait in all art. Patterns are comforting in their familiarity, alarming in subversion.
+
+Recognizing these meta-structures is one of my favorite techniques of analysis. With a good understanding of patterns and archetypes a story can be broken into its base components. Those components reveal the author's intent, emphasizing deviations and reinforcing themes.
