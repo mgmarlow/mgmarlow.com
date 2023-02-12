@@ -11,7 +11,7 @@ You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RS
 
 ### Some links
 
-- Check out my emacs configuration: [.emacs.d/init.el](https://github.com/mgmarlow/dotfiles/blob/master/.emacs.d/init.el).
+- Check out my emacs configuration: [.emacs.d/init.el](https://github.com/mgmarlow/.emacs.d/blob/master/init.el).
 - Contact me by email: <a href="mailto:blog@mgmarlow.com">blog@mgmarlow.com</a>.
 - Support this site: [buy me a coffee](https://www.buymeacoffee.com/mgmarlow).
 
