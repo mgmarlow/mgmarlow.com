@@ -10,9 +10,9 @@ pagination:
 
 <div class="prose dark:prose-invert">
   <main>
-    <ul class="p-0">
+    <ul class="p-0 m-0">
       {%- for post in posts -%}
-        <h2 class="mb-0"><a class="font-bold no-underline" href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+        <h2 class="first:mt-0 mb-0"><a class="font-bold no-underline" href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
         <p class="my-0">
           <small>
             {{ post.data.date | postDate }}

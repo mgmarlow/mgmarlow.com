@@ -1,81 +1,20 @@
 <nav class="text-slate-900 dark:text-slate-300">
-  <!-- Mobile -->
-  <div data-controller="nav" class="sm:hidden">
-    <div class="flex justify-between">
-      <a class="text-3xl font-bold dark:text-slate-200" href="{{ '/' | url }}">Graham Marlow</a>
-      
-      <button data-action="click->nav#toggle"
-              data-nav-target="button"
-              type="button"
-              class="inline-flex items-center justify-center
-                     rounded-md p-2 text-slate-900 dark:text-slate-300
-                     focus:outline-none focus:ring-2 focus:ring-inset
-                     focus:ring-slate-800 dark:focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false">
-        <span class="sr-only">Open nav menu</span>
-
-        <!-- From HeroIcons -->
-        <svg data-nav-target="menuOpen"
-             class="block h-6 w-6"
-             xmlns="http://www.w3.org/2000/svg"
-             fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-
-        <svg data-nav-target="menuClose"
-             class="hidden h-6 w-6"
-             xmlns="http://www.w3.org/2000/svg"
-             fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-
-    <div data-nav-target="content" class="hidden space-y-2 text-xl space-y-4">
-      <div class="mt-4">
-        <a class="{{ 'active-link' if '/' === page.url or '/words' in page.url }}" href="{{ '/' | url }}">words</a>
-      </div>
-      <div>
-        <a class="{{ 'active-link' if '/about' in page.url }}" href="{{ '/about' | url }}">about</a>
-      </div>
-      <div>
-        <a class="{{ 'active-link' if '/collections' in page.url }}" href="{{ '/collections' | url }}">tags</a>
-      </div>
-      <div>
-        <button data-controller="dark-mode" data-action="click->dark-mode#toggle">
-          <img class="moon hidden dark:inline-block w-6 h-6" src="{{ '/moon.svg' | url }}" alt="Toggle light mode" />
-          <img class="sun dark:hidden w-6 h-6" src="{{ '/sun.svg' | url }}" alt="Toggle dark mode" />
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Desktop -->
-  <div class="hidden sm:block max-w-prose mx-auto">
+  <div class="max-w-prose mx-auto">
     <div class="flex justify-between items-center">
-      <div class="flex flex-col">
-        <div class="mb-2">
-          <a class="text-3xl font-bold dark:text-slate-200" href="{{ '/' | url }}">Graham Marlow</a>
-        </div>
+        <a class="dark:text-slate-200" href="{{ '/' | url }}">Graham Marlow</a>
 
-          <div class="space-x-2">
-            <a class="{{ 'active-link' if '/' === page.url or '/words' in page.url }}" href="{{ '/' | url }}">words</a>
-            <a class="{{ 'active-link' if '/about' in page.url }}" href="{{ '/about' | url }}">about</a>
-            <a class="{{ 'active-link' if '/collections' in page.url }}" href="{{ '/collections' | url }}">tags</a>
+        <div class="flex space-x-4">
+          <a class="{{ 'active-link' if '/' === page.url or '/words' in page.url }}" href="{{ '/' | url }}">words</a>
+          <a class="{{ 'active-link' if '/about' in page.url }}" href="{{ '/about' | url }}">about</a>
+          <a class="{{ 'active-link' if '/collections' in page.url }}" href="{{ '/collections' | url }}">tags</a>
+
+          <div class="flex items-center">
+            <button data-controller="dark-mode" data-action="click->dark-mode#toggle">
+              <img class="moon hidden dark:inline-block w-6 h-6" src="{{ '/moon.svg' | url }}" alt="Toggle light mode" />
+              <img class="sun dark:hidden w-6 h-6" src="{{ '/sun.svg' | url }}" alt="Toggle dark mode" />
+            </button>
           </div>
         </div>
-
-      <div class="flex items-center">
-        <button data-controller="dark-mode" data-action="click->dark-mode#toggle">
-          <img class="moon hidden dark:inline-block w-6 h-6" src="{{ '/moon.svg' | url }}" alt="Toggle light mode" />
-          <img class="sun dark:hidden w-6 h-6" src="{{ '/sun.svg' | url }}" alt="Toggle dark mode" />
-        </button>
-      </div>
-    </div>
-
-    <div role="separator" class="py-4 text-slate-900 dark:text-slate-200">
-      <div class="w-full border-t border-gray-400"></div>
     </div>
   </div>
 </nav>
