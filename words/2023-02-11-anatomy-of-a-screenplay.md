@@ -3,11 +3,11 @@ title: Anatomy of a Screenplay
 date: 2023-02-11
 ---
 
-Here are some notes I took during [An Introduction to Screenwriting](https://www.futurelearn.com/courses/screenwriting). It's a good starting point if you have no experience writing a screenplay and can't conceptualize the process. Although the beats are formulaic, they're enough to get idea to paper so you can ditch that awful first draft.
+Here are some notes I took during [An Introduction to Screenwriting](https://www.futurelearn.com/courses/screenwriting). The course breaks down the standard film screenplay format and helps conceptualize the process of writing one yourself.
 
 ## The pitch
 
-These are the five points you'll want to keep in mind as you flesh out that idea squirming in your head.
+Before moving from idea to paper you'll need to clarify your intentions. Use these five points as the baseline:
 
 1.  Genre
 2.  Main protagonist
@@ -15,7 +15,7 @@ These are the five points you'll want to keep in mind as you flesh out that idea
 4.  Obstacle
 5.  Why this story is important
 
-Point 5 is especially important. What makes your story unique, what theme are you trying to portray? That theme will guide the rest of the screenwriting process.
+Draw special attention to point 5. What makes your story unique, what theme are you trying to portray? That theme will guide the rest of the screenwriting process.
 
 Once you've got a good pitch nailed down it's time to write your logline.
 
@@ -28,6 +28,8 @@ Take your pitch and throw it into a one-sentence summary. Here are some examples
 > **The Matrix**: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
 
 > **Reservoir Dogs**: After a simple jewelry heist goes terribly wrong, the surviving criminals begin to suspect that one of them is a police informant.
+
+Don't stress out about this step, you'll likely tweak and revise as you write.
 
 ## Flesh out your story
 
@@ -45,11 +47,11 @@ A three-act story maps to a 25-50-25 rhythm, delivering a 100 minute screentime.
 
 Introduce the setting, genre, characters, themes, and protagonist. Set the tone for how the audience should consume the movie.
 
-1.  What's the obstacle? (50min)
+2.  What's the obstacle? (50min)
 
 Obstacles force the character into new situations, relationships, and circumstances.
 
-1.  Resolve the story (25min)
+3.  Resolve the story (25min)
 
 Does the protagonist get what they want? How have they changed?
 
@@ -73,7 +75,7 @@ The [Save the Cat Beat Sheet](https://savethecat.com/) is a well-known boilerpla
 14. Finale: climatic resolution of conflict.
 15. Final image: a bookend that re-invokes the central theme.
 
-## Building a screenplay (outline method)
+## Writing the script
 
 Time to put your hard work to paper.
 
