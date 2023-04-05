@@ -6,7 +6,7 @@ tags: emacs
 
 Keeping a code journal has been a gratifying way to measure my professional growth and keep track of esoteric information. Over the years I've experimented with [tons of different methods](/words/2023-03-21-burn-after-writing), but code notes are trickier than word notes and are constrained to a digital environment.
 
-Daily entries are too sparse to be useful, spreading information in a way that is irrecoverable without a tagging nightmare. Zettelkasten-style is too nit-picky, exhausting too much of my time in organization and placement. I've settled on a nice middle ground: a weekly note coding scratchpad with backlinks to longer-form reference material.
+Daily entries are too sparse to be useful, spreading information in a way that is irrecoverable without a tagging nightmare. Zettelkasten-style is too nit-picky, exhausting too much of my time in organization and placement. I've settled on a nice middle ground: a weekly coding scratchpad with backlinks to longer-form reference material.
 
 Emacs is a great tool for coding notes in particular, thanks to the [literate programming](https://en.wikipedia.org/wiki/Literate_programming) environment [org-mode babel](https://orgmode.org/worg/org-contrib/babel/intro.html). The same [org file](https://orgmode.org/) that contains my todos also serves as a dynamic code environment, turning code snippets into executable scripts. Linking between notes is also easily supported with a lightweight package like [denote](https://protesilaos.com/emacs/denote).
 
