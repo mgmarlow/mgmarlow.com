@@ -1,5 +1,8 @@
 {% extends "layouts/main.njk" %}
 
+{% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.post | getNextCollectionItem(page) %}
+
 {% block content %}
   <article class="prose dark:prose-invert">
     <div class="mb-6">
@@ -19,4 +22,26 @@
     </div>
     {{ content | safe }}
   </article>
+{% endblock %}
+
+{% block footer %}
+  <footer class="my-10 prose dark:prose-invert">
+    <hr />
+
+    <p>Thanks for reading! Send your comments to <a href="mailto:blog@mgmarlow.com">blog@mgmarlow.com</a>.</p>
+
+    <div>
+      <p>
+        {% if previousPost %}
+          Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+        {% endif %}
+      </p>
+
+      <p>
+        {% if nextPost %}
+          Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+        {% endif %}
+      </p>
+    </div>
+  </footer>
 {% endblock %}

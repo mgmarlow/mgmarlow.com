@@ -21,10 +21,9 @@
           {{ content | safe }}
         {% endblock %}
       </main>
-    </div>
-    
-    <div class="my-10 p-3 md:p-0">
-      {% include "footer.njk" %}
+
+      {% block footer %}
+      {% endblock %}
     </div>
   </body>
 </html>
