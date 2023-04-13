@@ -20,7 +20,7 @@ module.exports = {
             fontSize: rem(18),
             pre: {
               fontSize: em(14, 18),
-            }
+            },
           },
         },
       },

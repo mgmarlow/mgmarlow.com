@@ -14,7 +14,7 @@ Together these tools are powerful but not overwhelming. Denote handles naming co
 
 It's also very easy to extend. Here's the Emacs command I use to generate my weekly scratchpad, along with its template:
 
-```el
+```elisp
 (require 'denote)
 
 (defun my/denote--weekly-template ()

@@ -90,7 +90,7 @@ It's best to get acquainted with the [Emacs help system](https://www.gnu.org/sof
 
 With those settings out of the way, we're going to install some packages. All of these packages are available on the default Emacs package server, [GNU Elpa](http://elpa.gnu.org/). If you'd like to configure alternatives, like MELPA, consult [the docs](https://melpa.org/#/getting-started).
 
-```elips
+```elisp
 ;; Great looking theme
 (use-package modus-themes
   :ensure t
@@ -136,7 +136,7 @@ Save your configuration file, close and re-open Emacs. Time to experiment!
 
 If you have an LSP server already installed, e.g. solargraph for Ruby, browse to a source file and activate [eglot](https://joaotavora.github.io/eglot/) with `M-x eglot`. You can ensure this happens automatically by adding an `eglot-ensure` hook to your Emacs configuration:
 
-```
+```elisp
 (use-package eglot
   :ensure t
   :hook (ruby-mode . eglot-ensure))

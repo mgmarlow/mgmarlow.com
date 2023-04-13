@@ -66,7 +66,7 @@ This will create a new Emacs Lisp file, `init.el`, in your Emacs configuration d
 
 From here, you can go ahead and start making some changes to your editor theme:
 
-```
+```elisp
 ;; Load a dark mode theme
 (load-theme 'deeper-blue t)
 ```
@@ -75,7 +75,7 @@ Although many guides will recommend removing the ugly menu/tool bars at the top 
 
 That said, if you want to remove them you can do so with the following code:
 
-```
+```elisp
 ;; Disable menu bar, scroll bar, and tool bar
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -92,14 +92,14 @@ My recommendations are either sourced from other configuration files I found in 
 
 First up are some performance threshold tweaks that will help Emacs run faster on a modern machine. Recall that you can look up the help documentation of any of these variables by invoking `C-h v`, or `M-x describe-variable`.
 
-```
+```elisp
 (setq gc-cons-threshold 100000000) ; 100 mb
 (setq read-process-output-max (* 1024 1024)) ; 1mb
 ```
 
 The remaining recommendations are more personal in nature. I'd urge you to read about each of these options and decide for yourself whether you'd like to include them. In particular, you may find yourself enjoying the customization UI that ships with Emacs ([`M-x customize`](https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)) more than me.
 
-```
+```elisp
 ;; Auto-refresh buffers when files on disk change.
 (global-auto-revert-mode t)
 
@@ -129,7 +129,7 @@ By default, Emacs comes with a curated package registry in the form of [GNU Elpa
 
 Add the following lines to your `~/.emacs.d/init.el`:
 
-```
+```elisp
 ;; You'll be installing your packages with the
 ;; built-in package.el script
 (require 'package)
@@ -150,7 +150,7 @@ Add the following lines to your `~/.emacs.d/init.el`:
 
 With MELPA ready to go, it's time to install your first package. Add the following to your `~/.emacs.d/init.el`.
 
-```
+```elisp
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 ```
@@ -193,7 +193,7 @@ Vertico is built by [Daniel Mendler](https://github.com/minad) and integrates ni
 
 Install the packages with `use-package`:
 
-```
+```elisp
 (use-package vertico
   :ensure t
   :init
@@ -208,7 +208,7 @@ Install the packages with `use-package`:
 
 Finally, I like to throw `savehist` in there as well so my recent completions appear at the top of the minibuffer. This one omits `:ensure t` since it ships with Emacs.
 
-```
+```elisp
 (use-package savehist
   :init
   (savehist-mode))
