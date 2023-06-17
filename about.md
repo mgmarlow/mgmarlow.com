@@ -3,11 +3,14 @@ title: about - mgmarlow.com
 layout: layouts/page.njk
 ---
 
-# About
+# About me
 
-Hello, I'm Graham. I'm a software engineer who likes to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/tags/emacs' | url }}), and occasionally contribute to [open source](https://github.com/mgmarlow/). Some of my recent projects include [Emacs config builder](https://emacs-config-generator.fly.dev/), [swapper](https://mgmarlow.itch.io/swapper), and [shuffle hustle](https://shuffle-hustle.com).
+Hello, I'm Graham. I'm a software engineer who likes to [build games](https://mgmarlow.itch.io/), write about my [Emacs obsession]({{ '/tags/emacs' | url }}), and contribute to [free & open source](https://github.com/mgmarlow/) software. You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}), if that's your fancy.
 
-You can read my [articles]({{ '/' | url }}) on this blog or subscribe to the [RSS feed]({{ '/feed.xml' | url }}), if that's your fancy.
+You might enjoy some of my Emacs packages:
+
+- [clippy-flymake](https://sr.ht/~mgmarlow/clippy-flymake/): A Flymake backend for Clippy
+- [store-git-link](https://sr.ht/~mgmarlow/store-git-link/): Share links to lines of code/commits
 
 ### Some links
 
