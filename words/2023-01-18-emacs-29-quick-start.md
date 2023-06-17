@@ -4,6 +4,8 @@ date: 2023-01-18
 tags: emacs
 ---
 
+> Update: I created [Emacs Starter Kit](https://emacs-config-generator.fly.dev) as an even quicker way to get up and running with Emacs. It uses the settings from this guide and throws in some extras for various programming languages. [Check it out](https://emacs-config-generator.fly.dev)!
+
 The no-nonsense guide to getting started with Emacs.
 
 By the end of this guide you'll have Emacs 29 configured with better default settings, IDE features like code-completion and LSP support, and much improved minibuffer completion. Everything listed here is available out of the box or downloaded from the default Emacs package server, [GNU Elpa](http://elpa.gnu.org/).
