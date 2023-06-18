@@ -1,11 +1,120 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Kudos:
+ * - https://github.com/kevquirk/simple.css/blob/main/simple.css
+ * - https://modernfontstacks.com/
+*/
 
-.tag {
-    @apply no-underline text-pink-500;
+:root {
+    --monospace-font: monospace;
+    --sans-font: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    --base-fontsize: 1.15rem;
+    --line-height: 1.5;
 }
 
-.active-link {
-    @apply font-bold text-slate-700 dark:text-slate-200 border-b-2 border-pink-500;
+html {
+    font-family: var(--sans-font);
+}
+
+p, h1, h2, h3, h4, h5, h6, li, a {
+    overflow-wrap: break-word;
+}
+
+body {
+    font-size: var(--base-fontsize);
+    line-height: var(--line-height);
+    max-width: 45rem;
+    margin: 0 auto;
+}
+
+pre, code {
+    font-family: var(--monospace-font);
+}
+
+pre[class*="language-"] {
+    line-height: 1.2 !important;
+}
+
+pre code[class*="language-"] {
+    font-size: 0.75em;
+    border: none;
+    line-height: 1.2;
+}
+
+li code, p code {
+    font-size: 0.75em;
+    border: 1px solid #eee;
+    padding: 0.15rem;
+}
+
+/* headers */
+h1 {
+    font-size: 2.6rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+h3 {
+    font-size: 1.44rem;
+    margin-top: 3rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+blockquote {
+    font-style: italic;
+    margin-inline-start: 1rem;
+    border-inline-start: 0.35rem solid #eee;
+    padding: 0 0.85rem;
+}
+
+main {
+    margin: 3rem auto;
+}
+
+.posttitle {
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    margin-top: 0rem;
+}
+
+.post-item {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.links-table {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .2rem 1rem;
+}
+
+.header {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.header a {
+    margin-right: 1rem;
 }

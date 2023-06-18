@@ -3,11 +3,15 @@
 {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.post | getNextCollectionItem(page) %}
 
+{% block header %}
+{% include "header.njk" %}
+{% endblock %}
+
 {% block content %}
-  <article class="prose dark:prose-invert">
-    <div class="mb-6">
-      <h1 class="my-0">{{ title }}</h1>
-      <p class="my-0">
+  <article>
+    <div>
+      <h1 class="posttitle">{{ title }}</h1>
+      <p class="subtitle">
         <small>
           <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em></span>
           <span>
@@ -25,23 +29,23 @@
 {% endblock %}
 
 {% block footer %}
-  <footer class="my-10 prose dark:prose-invert">
-    <hr />
+  <div>
+    <br />
 
     <p>Thanks for reading! Send your comments to <a href="mailto:blog@mgmarlow.com">blog@mgmarlow.com</a>.</p>
 
-    <div>
-      <p>
-        {% if previousPost %}
-          Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-        {% endif %}
-      </p>
+    <ul>
+      {% if previousPost %}
+      <li>
+        Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+      </li>
+      {% endif %}
 
-      <p>
-        {% if nextPost %}
-          Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-        {% endif %}
-      </p>
-    </div>
-  </footer>
+      {% if nextPost %}
+      <li>
+        Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
 {% endblock %}

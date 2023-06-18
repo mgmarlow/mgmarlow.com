@@ -30,7 +30,7 @@ You can also launch the tutorial via `C-h t`. ([What is `C-h`](https://www.gnu.o
 
 You've installed Emacs and you know some basic commands. It's time to edit your emacs configuration file:
 
-```
+```txt
 C-x C-f ~/.emacs.d/init.el
 ```
 
@@ -72,7 +72,7 @@ Drop in the following [Emacs Lisp](https://www.gnu.org/software/emacs/manual/htm
 
 I'm not going to walk through each line of code here, you can do that yourself with the built-in Emacs help system. Use `M-x describe-function` or `M-x describe-variable`:
 
-```
+```txt
 M-x describe-function menu-bar-mode
 
 M-x describe-variable window-resize-pixelwise
@@ -80,7 +80,7 @@ M-x describe-variable window-resize-pixelwise
 
 Or equivalently,
 
-```
+```txt
 C-h f menu-bar-mode
 
 C-h v window-resize-pixelwise

@@ -1,0 +1,35 @@
+---
+title: words | mgmarlow.com
+layout: layouts/page.njk
+pagination:
+  data: collections.post
+  size: 12
+  alias: posts
+  reverse: true
+---
+
+<h1>Words</h1>
+
+{%- for post in posts -%}
+<div class="post-item">
+  <div><a href="{{ post.url | url }}">{{ post.data.title }}</a></div>
+  <div><small>{{ post.data.date | postDate }}</small></div>
+</div>
+{%- endfor -%}
+
+<ol style="list-style: none; display: flex; margin: 0; padding: 0;">
+  <li style="margin-right: 1rem;">
+    {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}">prev</a>
+    {% else %}
+    prev
+    {% endif %}
+  </li>
+  <li>
+    {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}">next</a>
+    {% else %}
+    next
+    {% endif %}
+  </li>
+</ol>

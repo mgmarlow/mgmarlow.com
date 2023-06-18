@@ -3,59 +3,46 @@ title: mgmarlow.com
 layout: layouts/main.njk
 pagination:
   data: collections.post
-  size: 8
+  size: 5
   alias: posts
   reverse: true
 ---
 
-<div class="prose dark:prose-invert">
-  <main>
-    <ul class="p-0 m-0">
-      {%- for post in posts -%}
-        <h2 class="first:mt-0 mb-0"><a class="font-bold no-underline" href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-        <p class="my-0">
-          <small>
-            {{ post.data.date | postDate }}
-            {% for tag in post.data.tags %}
-              {% if tag !== "post" %}
-                <a class="ml-2 tag" href="{{ '/tags/' + tag | url }}">{{ tag }}</a>
-              {% endif %}
-            {% endfor %}
-          </small>
-        </p>
-        <p class="mt-0">{{ post.templateContent | excerpt }}</p>
-      {%- endfor -%}
-    </ul>
+<div class="intro">
+  <h1>Graham Marlow</h1>
+  <dl class="links-table">
+    <dt>foss</dt>
+    <dd><a href="https://git.sr.ht/~mgmarlow">~mgmarlow</a></dd>
 
-    <ol class="list-none flex p-0 space-x-4">
-      <li class="p-0">
-        {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}">prev</a>
-        {% else %}
-        prev
-        {% endif %}
-      </li>
-      <li class="p-0">
-        {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}">next</a>
-        {% else %}
-        next
-        {% endif %}
-      </li>
-    </ol>
-
-    <a class="no-underline" href="{{ '/feed.xml' | url }}">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline">
-        <path d="M3.75 3a.75.75 0 00-.75.75v.5c0 .414.336.75.75.75H4c6.075 0 11 4.925 11 11v.25c0 .414.336.75.75.75h.5a.75.75 0 00.75-.75V16C17 8.82 11.18 3 4 3h-.25z" />
-        <path d="M3 8.75A.75.75 0 013.75 8H4a8 8 0 018 8v.25a.75.75 0 01-.75.75h-.5a.75.75 0 01-.75-.75V16a6 6 0 00-6-6h-.25A.75.75 0 013 9.25v-.5zM7 15a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-      atom/rss
-    </a>
-  </main>
+    <dt>email</dt>
+    <dd><a href="mailto:info@mgmarlow.com">info@mgmarlow.com</a></dd>
+  </dl>
 </div>
 
-{% block footer %}
-  <div class="my-10">
-    {% include "footer.njk" %}
+<section>
+  <h2>Recent posts</h2>
+
+  {%- for post in posts -%}
+  <div class="post-item">
+    <div><a href="{{ post.url | url }}">{{ post.data.title }}</a></div>
+    <div><small>{{ post.data.date | postDate }}</small></div>
   </div>
-{% endblock %}
+  {%- endfor -%}
+
+  <a href="{{ '/words' | url }}">See all</a>
+</section>
+
+<section>
+  <h2>Recent projects</h2>
+
+  <dl class="links-table">
+    <dt><a href="https://sr.ht/~mgmarlow/clippy-flymake/">clippy-flymake</a></dt>
+    <dd>A Flymake backend for Clippy, the Rust linter</dd>
+
+    <dt><a href="https://sr.ht/~mgmarlow/store-git-link/">store-git-link</a></dt>
+    <dd>Share code links to git repos</dd>
+    
+    <dt><a href="https://emacs-config-generator.fly.dev/">Emacs starter kit</a></dt>
+    <dd>Kickstart your Emacs config with sensible defaults</dd>
+  </dl>
+</section>

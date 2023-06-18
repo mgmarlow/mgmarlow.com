@@ -1,13 +1,12 @@
 {% extends "layouts/main.njk" %}
 
+{% block header %}
+{% include "header.njk" %}
+{% endblock %}
+
 {% block content %}
-  <article class="prose dark:prose-invert">
+  <article>
     {{ content | safe }}
   </article>
 {% endblock %}
 
-{% block footer %}
-  <div class="my-10">
-    {% include "footer.njk" %}
-  </div>
-{% endblock %}

@@ -7,30 +7,23 @@
     <title>{{ title }}</title>
     <meta name="description" content="Graham Marlow on the internet"/>
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link href="{{ '/reset.css' | url }}" rel="stylesheet"/>
     <link href="{{ '/index.css' | url }}" rel="stylesheet"/>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
-    <script src="{{ '/bundle.js' | url }}"></script>
-    <style>
-      /* Match tailwind typography defaults */
-      pre[class*="language-"] {
-        font-size: 0.78em;
-      }
-    </style>
   </head>
-  <body class="bg-zinc-50 dark:bg-zinc-800 text-slate-500 dark:text-gray-100">
-    <div class="mt-6 px-3">
-      {% include "header.njk" %}
-    </div>
-    
-    <div class="max-w-prose mx-auto my-8 md:my-16 p-3 md:p-0">
-      <main>
-        {% block content %}
-          {{ content | safe }}
-        {% endblock %}
-      </main>
+  <body>
+    {% block header %}
+    {% endblock %}
+
+    <main>
+      {% block content %}
+      {{ content | safe }}
+      {% endblock %}
 
       {% block footer %}
       {% endblock %}
-    </div>
+    </main>
+
+    {% include "footer.njk" %}
   </body>
 </html>
