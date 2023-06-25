@@ -50,7 +50,7 @@ Calling the command `my/denote-weekly` in Emacs will either (a) create a new den
 
 The org files themselves end up looking something like this:
 
-```
+```txt
 #+title:      week-2023-01
 #+date:       [2023-01-02 Mon 08:02]
 #+filetags:   :journal:weekly:
@@ -78,7 +78,7 @@ Org itself is [rich with features](https://orgmode.org/features.html) but the re
 
 As far as retrieval goes, denote timestamps notes on creation so they're neatly organized in a flat directory:
 
-```
+```txt
 ~/denote/
   20230102T080211--week-2023-01__journal_weekly.org
   20221228T091238--week-2022-52__journal_weekly.org

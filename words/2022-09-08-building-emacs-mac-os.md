@@ -16,7 +16,7 @@ This is a guide for building Emacs from source for Mac OSX (tested on 12.4, M1) 
 
 First, clone the repo (you can also use the [Github mirror](https://github.com/emacs-mirror/emacs) instead):
 
-```
+```txt
 git clone https://git.savannah.gnu.org/git/emacs.git
 ```
 
@@ -26,7 +26,7 @@ These next few steps are taken straight from the [INSTALL.REPO](https://github.c
 
 After the code is pulled down, cd into the directory and run the `autogen.sh` script. This initial script generates another script (`configure`) that you'll use to actually configure the Emacs `Makefile` to build on your OS.
 
-```
+```txt
 cd emacs/
 ./autogen.sh
 ```
@@ -35,7 +35,7 @@ cd emacs/
 
 You can view all of the available options for `configure` by passing in the `--help` flag:
 
-```
+```txt
 ./configure --help
 ```
 
@@ -51,7 +51,7 @@ Here is the list of options that are recommended for Mac OS, compiled from [vari
 
 Run the `configure` script with these options to create the `Makefile` you'll use to build Emacs.
 
-```
+```txt
 ./configure --with-native-compilation \
             --with-json \
             --with-ns \
@@ -67,31 +67,31 @@ After this finishes, it's time to build Emacs proper.
 
 > Note: if `make` fails, take a look at "Troubleshooting" down below. Your best bet is to run `make bootstrap` instead.
 
-```
+```txt
 make
 ```
 
 This creates an Emacs binary at `src/emacs`. You can verify that everything worked properly by running `emacs -Q`, launching it with no configuration.
 
-```
+```txt
 src/emacs -Q
 ```
 
 After you've verified that everything is good to go, the last step is to assemble `Emacs.app` proper:
 
-```
+```txt
 make install
 ```
 
 You'll notice that a hefty `Emacs.app` application now lives in the `nextstep/` directory. Go ahead and move it into your `/Applications/` directory.
 
-```
+```txt
 mv nextstep/Emacs.app /Applications/
 ```
 
 I also like to include `src` and `lib-src` on `PATH` so I can run Emacs from the CLI (particularly important for `emacsclient`):
 
-```
+```txt
 # Syntax for fish shell
 set PATH $HOME/projects/emacs/src $PATH
 set PATH $HOME/projects/emacs/lib-src $PATH
@@ -112,7 +112,7 @@ Best of luck, new Emacs contributor!
 
 If `make` fails, one of the easiest ways to resolve most problems is to use the bootstrap script instead:
 
-```
+```txt
 # Clean out any dangling build artifacts
 make clean
 
