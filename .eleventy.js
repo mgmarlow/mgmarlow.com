@@ -4,6 +4,8 @@ const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'public/*': '/' })
+  eleventyConfig.addPassthroughCopy("reset.css")
+  eleventyConfig.addPassthroughCopy("index.css")
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
 

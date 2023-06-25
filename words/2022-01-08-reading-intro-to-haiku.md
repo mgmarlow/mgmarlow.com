@@ -25,13 +25,13 @@ That said, even with a shorter syllable count, short-long-short is still the rec
 
 ### Bashō
 
-```
+```txt
 On a journey, ill,
   and over fields all withered,
     dreams go wandering still.
 ```
 
-```
+```txt
 A lightning gleam:
   into darkness travels
     a night heron’s scream.
@@ -39,7 +39,7 @@ A lightning gleam:
 
 ### Issa
 
-```
+```txt
 A new year starting, but—
   it’s still just as it stands here,
     this ramshackle hut!
@@ -47,19 +47,19 @@ A new year starting, but—
 
 ### Shiki
 
-```
+```txt
 The mists come;
   the mountains fade and vanish;
     the tower stands alone.
 ```
 
-```
+```txt
 Night; and once again,
   the while I wait for you,
     cold wind turns into rain.
 ```
 
-```
+```txt
 Icy the moonshine:
   shadow of a tombstone,
     shadow of a pine.

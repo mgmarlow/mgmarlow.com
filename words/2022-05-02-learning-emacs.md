@@ -33,7 +33,7 @@ After [downloading Emacs](https://www.gnu.org/software/emacs/), I recommend runn
 
 If looking at the default Emacs theme is too much to bear, swap to one of the dark-mode themes:
 
-```
+```txt
 M-x load-theme RET deeper-blue
 ```
 
@@ -51,14 +51,14 @@ Instructions: [MacOS](https://stackoverflow.com/questions/15435253/how-to-remap-
 
 All of your Emacs files will go into `.emacs.d`, so go ahead and create a new directory:
 
-```
+```txt
 # Cool stuff goes in here
 mkdir ~/.emacs.d/
 ```
 
 Back in Emacs, make a new file with `M-x find-file`, or the following keybinding:
 
-```
+```txt
 C-x C-f ~/.emacs.d/init.el
 ```
 
@@ -177,7 +177,7 @@ Luckily there are a few built-in alternatives, a subject to which Mickey Peterso
 
 Give it a try and you'll immediately notice the difference:
 
-```
+```txt
 M-x fido-vertical-mode
 ```
 
