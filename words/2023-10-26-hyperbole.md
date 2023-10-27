@@ -32,8 +32,8 @@ for building GUIs based on the principles of hypermedia.
 All programs built in HyperCard consist of just two components: cards
 that store data and links that navigate between those cards or execute
 scripts. It's a simple system that offers a lot of flexibility; even
-today I think it would make an awesome prototyping tool. It seems no
-coincidence that the scripting language is named HyperTalk, as the
+today I think it would make an awesome prototyping tool. It also seems
+no coincidence that the scripting language is named HyperTalk, as the
 whole environment reminds me of
 [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk).
 
@@ -58,9 +58,7 @@ written by Danny Goodman in the video, is available to read online.
 It always amazes me what creative people can create using simple
 tools. HyperCard and the early days of Cyan are no exception; it seems
 like the duo were able to find a lot of success by excelling within
-the constraints of their software. You can find Cyan's pre-Myst games
-[on Steam](https://store.steampowered.com/app/63620/) to get a feel
-for how they looked.
+the constraints of their software.
 
 Hypermedia systems are super interesting to me, particularly with the
 renewed interest in tools like [htmx](https://htmx.org/) that promise
@@ -75,16 +73,8 @@ I stumbled on this Emacs package recently and I had this overwhelming
 sense of deja vu due to its similarities to HyperCard. It was
 originally created in the 90s and retains an identity true to that era
 through some of its naming conventions (e.g. HyRolo, the rolodex
-extension). But more than that it is a hypermedia engine, just like
-HyperCard, that is scriptable with Emacs Lisp.
-
-Hyperbole doesn't deal in cards like HyperCard, but text
-documents. It's an Emacs package so it's able to take advantage of the
-Emacs ecosystem, allowing you to link between text files, email
-messages, bug reports, Org files, and the like. Although it has its
-own syntax for links, Hyperbole can call out to any Emacs Lisp
-function, meaning you can extend it with functionality in the very
-same way you'd extend regular old Emacs.
+extension). But more than that it is a full hypermedia engine, just
+like HyperCard, that is scriptable with Emacs Lisp.
 
 The fact that Emacs contains an entire hypermedia system as an
 external package is probably unsurprising given its reputation as an
@@ -122,8 +112,9 @@ Linking to a zettel in Hyperbole might look something like this:
 <hyrolo-fgrep "Immanuel Kant">
 ```
 
-In this case, the link reveals its implementation. It's a grep over
-all HyRolo records for the string matching "Immanuel Kant".
+In this case, the link reveals its implementation. It's a call to an
+Emacs Lisp function that greps over all HyRolo records for the string
+matching "Immanuel Kant".
 
 Of course, you don't actually need to have an ugly link like that in
 your zettel text. Instead, you can create what's called an "explicit
