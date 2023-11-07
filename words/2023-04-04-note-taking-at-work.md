@@ -74,7 +74,7 @@ The org files themselves end up looking something like this:
 
 Occasionally I'll need to convert from org to markdown to copy something from my notes into a work document or task. Calling `org-md-export-as-markdown` opens up a new buffer with the entire contents of my weekly note in markdown, ready for copy+paste.
 
-Org itself is [rich with features](https://orgmode.org/features.html) but the real game-changer for me is the ability to paste code links from disc into an org file (via `org-store-link`). Clicking the link will open the source file in Emacs at the line of code where the link was stored. I used to rely on a similar workflow by linking to Github (via a custom [Emacs command](https://github.com/mgmarlow/.emacs.d/blob/master/lisp/store-code-link.el)), but linking to local files within Emacs is way better for browsing, editing, and note-taking.
+Org itself is [rich with features](https://orgmode.org/features.html) but the real game-changer for me is the ability to paste code links from disc into an org file (via `org-store-link`). Clicking the link will open the source file in Emacs at the line of code where the link was stored. I used to rely on a similar workflow by linking to Github (via a custom [Emacs command](https://git.sr.ht/~mgmarlow/git-share)), but linking to local files within Emacs is way better for browsing, editing, and note-taking.
 
 As far as retrieval goes, denote timestamps notes on creation so they're neatly organized in a flat directory:
 
