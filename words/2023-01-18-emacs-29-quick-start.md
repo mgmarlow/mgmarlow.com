@@ -1,6 +1,7 @@
 ---
 title: Emacs 29 Quick Start
 date: 2023-01-18
+updated_at: 2024-02-06
 tags: emacs
 ---
 
@@ -15,10 +16,14 @@ By the end of this guide you'll have Emacs 29 configured with better default set
 Begin by installing Emacs 29 for your OS:
 
 - Mac OS: [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) via Homebrew
-- Linux: [Build from source](https://git.savannah.gnu.org/cgit/emacs.git) on the `emacs-29` branch (see [INSTALL](https://git.savannah.gnu.org/cgit/emacs.git/tree/INSTALL))
+- Linux: [Build from source](https://git.savannah.gnu.org/cgit/emacs.git) (see [INSTALL](https://git.savannah.gnu.org/cgit/emacs.git/tree/INSTALL))
 - Windows: Download an [alpha.gnu.org snapshot](https://alpha.gnu.org/gnu/emacs/pretest/windows/emacs-29/?C=M;O=D)
 
-Emacs 29 isn't technically released, but as far as release previews go Emacs is as stable as it gets. It's important that you install Emacs 29 and not a prior version. This guide uses both eglot and use-package, two packages introduced in Emacs 29.
+It's important to use Emacs 29+ and not a prior version. Emacs 29
+ships with two important libraries
+([eglot](https://github.com/joaotavora/eglot) and
+[use-package](https://github.com/jwiegley/use-package)) that are used
+extensively in this guide.
 
 ## Run through the tutorial
 
@@ -37,10 +42,6 @@ C-x C-f ~/.emacs.d/init.el
 Drop in the following [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html) code:
 
 ```elisp
-;; Performance tweaking for modern machines
-(setq gc-cons-threshold 100000000)
-(setq read-process-output-max (* 1024 1024))
-
 ;; Hide UI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -66,6 +67,7 @@ Drop in the following [Emacs Lisp](https://www.gnu.org/software/emacs/manual/htm
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; Refresh package archives (GNU Elpa)
+(require 'package)
 (unless package-archive-contents
   (package-refresh-contents))
 ```
@@ -100,7 +102,7 @@ With those settings out of the way, we're going to install some packages. All of
   (modus-themes-load-themes)
   :config
   (modus-themes-load-vivendi))
-  
+
 ;; Code completion at point
 (use-package company
   :ensure t
