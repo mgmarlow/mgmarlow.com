@@ -3,7 +3,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ 'public/*': '/' })
+  eleventyConfig.addPassthroughCopy({ 'public': '/' })
   eleventyConfig.addPassthroughCopy("styles/reset.css")
   eleventyConfig.addPassthroughCopy("styles/index.css")
   eleventyConfig.addPlugin(pluginRss)
