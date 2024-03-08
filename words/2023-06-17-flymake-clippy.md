@@ -4,7 +4,7 @@ date: 2023-06-19
 tags: emacs
 ---
 
-Last weekend I had a great time building my own Flymake backend for Clippy (the Rust linter): [`flymake-clippy`](https://sr.ht/~mgmarlow/flymake-clippy/). If you haven't heard of Flymake, it's old-school Emacs tech for showing squiggly-lines in your editor. You can build your own Flymake extensions by creating a function, referred to as a backend, that collects diagnostics and reports them to Flymake. Register that backend in your Emacs config and you've got squiggles whenever you open up a Rust file. Pretty cool!
+Last weekend I had a great time building my own Flymake backend for Clippy (the Rust linter): [`flymake-clippy`](https://github.com/mgmarlow/flymake-clippy/). If you haven't heard of Flymake, it's old-school Emacs tech for showing squiggly-lines in your editor. You can build your own Flymake extensions by creating a function, referred to as a backend, that collects diagnostics and reports them to Flymake. Register that backend in your Emacs config and you've got squiggles whenever you open up a Rust file. Pretty cool!
 
 `flymake-clippy` is an extension of the [annotated example](https://www.gnu.org/software/emacs/manual/html_mono/flymake.html#An-annotated-example-backend) found in the Emacs Manual. While the example serves as a great starting point, I found that in practice it leaves too many details unexplained. Most of my development time was spent looking through the Emacs documentation, learning about regular expression match groups, external processes, and buffer searching. There were also some surprises when trying to integrate `flymake-clippy` with Eglot, the LSP package that now ships with Emacs.
 
@@ -107,7 +107,7 @@ I found it much easier to iterate on a regular expression by writing tests rathe
   (list (match-string 1)
         (match-string 2)
         (match-string 3)))
-        
+
 (ert-deftest clippy-test-regexp ()
   "Tests regexp matches diagnostic information."
   (should
@@ -157,5 +157,4 @@ Nowadays, thanks to the efforts of Eglot author João Távora, Flymake and Flych
 
 ## flymake-clippy
 
-If you want to see Clippy warnings in your Rust buffers, check out [flymake-clippy](https://sr.ht/~mgmarlow/flymake-clippy/). Refer to the [README](https://git.sr.ht/~mgmarlow/flymake-clippy/tree/main/item/README.md) for setup instructions.
-
+If you want to see Clippy warnings in your Rust buffers, check out [flymake-clippy](https://github.com/mgmarlow/flymake-clippy/). Refer to the [README](https://github.com/mgmarlow/flymake-clippy/tree/main/item/README.md) for setup instructions.
