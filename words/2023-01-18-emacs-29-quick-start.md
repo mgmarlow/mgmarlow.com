@@ -1,11 +1,15 @@
 ---
 title: Emacs 29 Quick Start
 date: 2023-01-18
-updated_at: 2024-02-06
+updated_at: 2024-04-13
 tags: emacs
 ---
 
-> Update: I created [Emacs Starter Kit](https://emacs-config-generator.fly.dev) as an even quicker way to get up and running with Emacs. It uses the settings from this guide and throws in some extras for various programming languages. [Check it out](https://emacs-config-generator.fly.dev)!
+> Update: I created [Start
+> Emacs](https://github.com/mgmarlow/start-emacs) as an easier way to
+> get up and running with Emacs. It follows many of the same
+> principles in this guide and throws in some extras. [Check it
+> out here](https://github.com/mgmarlow/start-emacs)
 
 The no-nonsense guide to getting started with Emacs.
 

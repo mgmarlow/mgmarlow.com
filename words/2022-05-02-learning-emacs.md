@@ -1,17 +1,32 @@
 ---
 title: Emacs from scratch
 date: 2022-05-08
-updated_at: 2022-10-13
+updated_at: 2024-04-13
 tags: emacs
 ---
 
-**Edit**
+> Update: I created [Start
+> Emacs](https://github.com/mgmarlow/start-emacs) as an easier way to
+> get up and running with Emacs. It follows many of the same
+> principles in this guide and throws in some extras. [Check it out
+> here](https://github.com/mgmarlow/start-emacs)
 
-Four months after writing this article and I'm still using Emacs full-time with my own, custom configuration. I continue to find great pleasure in extending my setup with small snippets I stumble upon from Emacs hackers far wiser than myself. Those tweaks aside, my [current configuration](https://git.sr.ht/~mgmarlow/dotemacs) is mostly stable.
+Four months after writing this article and I'm still using Emacs
+full-time with my own, custom configuration. I continue to find great
+pleasure in extending my setup with small snippets I stumble upon from
+Emacs hackers far wiser than myself. Those tweaks aside, my [current
+configuration](https://github.com/mgmarlow/dotemacs) is going strong.
 
-I maintain the opinion that creating your own Emacs configuration is not nearly as daunting as is often presented. With a few tweaks to the base defaults (technomancy's [better-defaults](https://git.sr.ht/~technomancy/better-defaults) is a great place to start) you can be up-and-running with an editor that looks and feels far closer to modern alternatives. A few packages later and you're well on your way to Emacs nirvana.
+I maintain the opinion that creating your own Emacs configuration is
+not nearly as daunting as is often presented. With a few tweaks to the
+base defaults you can be up-and-running with an editor that looks and
+feels far closer to modern alternatives. A few packages later and
+you're well on your way to Emacs nirvana.
 
-For those of you who have decided to build your own configuration from scratch: enjoy the process! The greatest thing about Emacs is the satisfaction of building a tool to suit your preferences. I hope this article helps you on that journey.
+For those of you who have decided to build your own configuration from
+scratch: enjoy the process! The greatest thing about Emacs is the
+satisfaction of building a tool to suit your preferences. I hope this
+article helps you on that journey.
 
 **Original article**
 
