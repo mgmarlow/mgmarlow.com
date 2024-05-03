@@ -13,7 +13,7 @@
       <h1 class="posttitle">{{ title }}</h1>
       <p class="subtitle">
         <small>
-          <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated_at | postDate  if updated_at }}</em></span>
+          <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate  if updated }}</em></span>
           <span>
             {% for tag in tags %}
               {% if tag !== "post" %}

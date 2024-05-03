@@ -1,7 +1,7 @@
 ---
 title: Building Emacs from source on MacOS
 date: 2022-09-08
-updated_at: 2022-10-27
+updated: 2022-10-27
 tags: emacs
 ---
 

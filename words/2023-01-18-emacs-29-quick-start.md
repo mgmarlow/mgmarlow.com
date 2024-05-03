@@ -1,7 +1,7 @@
 ---
 title: Emacs 29 Quick Start
 date: 2023-01-18
-updated_at: 2024-04-13
+updated: 2024-04-13
 tags: emacs
 ---
 

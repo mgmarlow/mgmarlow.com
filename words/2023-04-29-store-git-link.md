@@ -1,7 +1,7 @@
 ---
 title: "New Emacs Package: store-git-link"
 date: 2023-04-29
-updated_at: 2024-03-07
+updated: 2024-03-07
 tags: emacs
 ---
 
