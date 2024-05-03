@@ -2,7 +2,7 @@
 ::backdrop {
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
     --sans-font: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-    --base-fontsize: 1.15rem;
+    --base-fontsize: 1.25rem;
     --line-height: 1.5;
 
     /* theme */
