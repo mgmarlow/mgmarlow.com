@@ -1,7 +1,7 @@
 ---
 title: Introducing ReScript
 date: 2022-01-10
-updated_at: 2022-08-22
+updated: 2022-08-22
 ---
 
 A few weeks ago I revisited [ReScript](https://rescript-lang.org/) and experimented with the ecosystem during Advent of Code. I was pleased to discover that the language is in a much better place than four years ago.
