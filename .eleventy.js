@@ -7,8 +7,6 @@ const allTags = require('./_11ty/collections/allTags')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '/' })
-  eleventyConfig.addPassthroughCopy('styles/reset.css')
-  eleventyConfig.addPassthroughCopy('styles/index.css')
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
 
