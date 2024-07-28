@@ -176,18 +176,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@example/starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@example/starter@workspace:."
-  dependencies:
-    "@11ty/eleventy": "npm:^2.0.1"
-    "@11ty/eleventy-plugin-rss": "npm:^1.2.0"
-    "@11ty/eleventy-plugin-syntaxhighlight": "npm:^5.0.0"
-    luxon: "npm:^3.4.3"
-    striptags: "npm:^3.2.0"
-  languageName: unknown
-  linkType: soft
-
 "@iarna/toml@npm:^2.2.5":
   version: 2.2.5
   resolution: "@iarna/toml@npm:2.2.5"
@@ -1661,6 +1649,18 @@ __metadata:
   checksum: 10c0/254a8a4605b58f450308fc474c82ac9a094848081bf4c06778200207820e5193726dc563a0d2c16468810516a5c97d9d3ea0ca6585d23c58ccfff2403e8dbbeb
   languageName: node
   linkType: hard
+
+"mgmarlow.com@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "mgmarlow.com@workspace:."
+  dependencies:
+    "@11ty/eleventy": "npm:^2.0.1"
+    "@11ty/eleventy-plugin-rss": "npm:^1.2.0"
+    "@11ty/eleventy-plugin-syntaxhighlight": "npm:^5.0.0"
+    luxon: "npm:^3.4.3"
+    striptags: "npm:^3.2.0"
+  languageName: unknown
+  linkType: soft
 
 "micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5

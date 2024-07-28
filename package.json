@@ -1,6 +1,6 @@
 {
-  "name": "@example/starter",
-  "version": "0.0.1",
+  "name": "mgmarlow.com",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "dev": "eleventy --serve --output=out",
