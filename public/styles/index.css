@@ -99,7 +99,7 @@ pre code[class*="language-"] {
 }
 
 li code, p code {
-    font-size: 0.75em;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
