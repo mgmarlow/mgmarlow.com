@@ -19,5 +19,14 @@ yarn-error.log*
 # macOS-specific files
 .DS_Store
 
+# Emacs tmp files
 *~
 
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
