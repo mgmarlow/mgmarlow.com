@@ -1,9 +1,36 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Italic.woff2");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-BoldItalic.woff2");
+    font-style: italic;
+    font-weight: 700;
+}
+
 :root,
 ::backdrop {
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
-    --sans-font: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     --base-fontsize: 1.25rem;
-    --line-height: 1.5;
+    --line-height: 1.65;
 
     /* theme */
     --bg: #fff;
@@ -16,12 +43,13 @@
 @media (prefers-color-scheme: dark) {
     :root,
     ::backdrop {
-         color-scheme: dark;
-         --bg: #212121;
-         --text: #dcdcdc;
-         --text-light: #ababab;
-         --accent: #5886ff;
-         --code: #f06292;
+        color-scheme: dark;
+        --bg: #1c1b22;
+        --text: #f3f4f6;
+        --text-footer: #ababab;
+        --text-light: #c9d1d3;
+        --accent: #5886ff;
+        --code: #f06292;
     }
 }
 
@@ -34,7 +62,7 @@ p, h1, h2, h3, h4, h5, h6, li, a {
 }
 
 body {
-    color: var(--text);
+    color: var(--text-light);
     background-color: var(--bg);
     font-size: var(--base-fontsize);
     line-height: var(--line-height);
@@ -49,7 +77,7 @@ main {
 }
 
 footer {
-    color: var(--text-light);
+    color: var(--text-footer);
 }
 
 code {
@@ -72,6 +100,11 @@ pre code[class*="language-"] {
 
 li code, p code {
     font-size: 0.75em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: var(--text);
 }
 
 h1 {
@@ -159,4 +192,5 @@ blockquote {
 }
 .header a {
     margin-right: 1rem;
+    font-weight: bold;
 }
