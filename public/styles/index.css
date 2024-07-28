@@ -29,8 +29,8 @@
 ::backdrop {
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
     --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-    --base-fontsize: 1.25rem;
-    --line-height: 1.65;
+    --base-fontsize: 16px;
+    --line-height: 1.5;
 
     /* theme */
     --bg: #fff;
@@ -93,13 +93,8 @@ pre[class*="language-"] {
 }
 
 pre code[class*="language-"] {
-    font-size: 0.75em;
     border: none;
     line-height: 1.2;
-}
-
-li code, p code {
-    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -188,9 +183,13 @@ blockquote {
 .header {
     padding: 1rem 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 .header a {
     margin-right: 1rem;
     font-weight: bold;
+}
+
+.nohighlight, .nohighlight:visited {
+    color: var(--text-light);
 }
