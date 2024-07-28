@@ -1,4 +1,9 @@
+const striptags = require("striptags");
+
 module.exports = function excerpt (post) {
-  const content = post.replace(/(<([^>]+)>)/gi, '')
-  return content.substr(0, content.lastIndexOf(' ', 200)) + '...'
+  return striptags(post)
+    .replace(/&quot;/g, '"')
+    .substring(0, 200)
+    .trim()
+    .concat("...");
 }
