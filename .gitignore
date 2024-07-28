@@ -1,6 +1,7 @@
 # build output
 dist
 out
+_site
 
 # dependencies
 node_modules/

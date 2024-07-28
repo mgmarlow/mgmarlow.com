@@ -1,3 +1,4 @@
+const esbuild = require('esbuild')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 
@@ -14,6 +15,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('excerpt', excerpt)
 
   eleventyConfig.addCollection('allTags', allTags)
+
+  eleventyConfig.addWatchTarget('assets/js/')
+  eleventyConfig.on('afterBuild', () => {
+    return esbuild.build({
+      entryPoints: ['assets/js/application.js'],
+      outdir: '_site/assets/js/',
+      minify: process.env.NODE_ENV === 'production',
+      bundle: true,
+    })
+  })
 
   return {
     templateFormats: ['md', 'njk', 'html'],
