@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "eleventy --serve --output=out",
+    "dev": "eleventy --serve --output=out",
     "build": "eleventy --output=out"
   },
   "dependencies": {

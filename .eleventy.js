@@ -1,6 +1,9 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
-const { DateTime } = require('luxon')
+
+const postDate = require('./_11ty/filters/postDate')
+const excerpt = require('./_11ty/filters/excerpt')
+const allTags = require('./_11ty/collections/allTags')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '/' })
@@ -9,28 +12,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
 
-  eleventyConfig.addFilter('postDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
-  })
+  eleventyConfig.addFilter('postDate', postDate)
+  eleventyConfig.addFilter('excerpt', excerpt)
 
-  eleventyConfig.addFilter('excerpt', (post) => {
-    const content = post.replace(/(<([^>]+)>)/gi, '')
-    return content.substr(0, content.lastIndexOf(' ', 200)) + '...'
-  })
-
-  eleventyConfig.addCollection('allTags', async (api) => {
-    const items = await api.getAll()
-
-    return items
-      .flatMap((i) => i.data.tags)
-      .filter((tag, i, self) => {
-        if (!tag || tag === 'post') {
-          return false
-        }
-
-        return self.indexOf(tag) === i
-      })
-  })
+  eleventyConfig.addCollection('allTags', allTags)
 
   return {
     templateFormats: ['md', 'njk', 'html'],
