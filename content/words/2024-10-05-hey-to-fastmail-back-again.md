@@ -16,19 +16,14 @@ Two years later and I'm moving back to HEY.
 Why switch back? The decision mostly comes down to the difference in user experience between the two apps. Fastmail feels like a chore to use, especially on iOS where most of my email (and newsletter) reading happens. Here are my two biggest problems:
 
 - I'd often need to close and reopen the Fastmail app because it was stuck on a black screen. Particularly frustrating when on a slow connection because it means going through the whole SPA-style loading animation that can take 10-20 seconds.
-
 - Using contacts + groups as substitutes for "The Feed" and "Paper Trail" is tedious. Email addresses that go into either bucket must first be added to contacts, then edited to include the appropriate filtering group. I honestly can't remember how to do this in the mobile app.
 
 There were also a handful of workflows that I was missing from HEY:
 
 - The ability to merge threads and create collections is incredible when dealing with travel plans. Rather than juggling a bunch of labels for different trips, email threads are neatly organized into one spot for each.
-
 - "Send me push notifications" on an email thread, which will notify me when that thread and only that thread receives replies, is genius.
-
 - I created a "Set Aside" folder in Fastmail but eventually found myself missing the nice little stack of email threads that are bundled up in a corner in the HEY app.
-
 - [Bundling email from certain senders into a single thread](https://www.hey.com/features/bundles/) is an excellent solution for notification streams from Github or Amazon, where I want to be alerted with updates but don't want to have a bunch of separate email threads taking up space in my inbox.
-
 - I really like [clips](https://www.hey.com/features/clips-highlights/) as an alternative to slapping on a label so I know to revisit an email for some buried content.
 
 Don't get me wrong, Fastmail is a great service. If I didn't find out that masked email could be replaced by [DuckDuckGo Email Protection](https://duckduckgo.com/email/) I would probably still be using it[^1]. I'm especially fond of their investment in [JMAP](https://www.fastmail.com/blog/jmap-new-email-open-standard/) and attempts to make the technical ecosystem around email better.
