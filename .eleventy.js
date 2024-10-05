@@ -1,4 +1,5 @@
 const esbuild = require('esbuild')
+const mdFootnote = require('markdown-it-footnote')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 
@@ -10,6 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '/' })
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
+  eleventyConfig.amendLibrary('md', (md) => md.use(mdFootnote))
 
   eleventyConfig.addFilter('postDate', postDate)
   eleventyConfig.addFilter('excerpt', excerpt)
