@@ -26,15 +26,18 @@ There were also a handful of workflows that I was missing from HEY:
 - [Bundling email from certain senders into a single thread](https://www.hey.com/features/bundles/) is an excellent solution for notification streams from Github or Amazon, where I want to be alerted with updates but don't want to have a bunch of separate email threads taking up space in my inbox.
 - I really like [clips](https://www.hey.com/features/clips-highlights/) as an alternative to slapping on a label so I know to revisit an email for some buried content.
 
-Don't get me wrong, Fastmail is a great service. If I didn't find out that masked email could be replaced by [DuckDuckGo Email Protection](https://duckduckgo.com/email/) I would probably still be using it[^1]. I'm especially fond of their investment in [JMAP](https://www.fastmail.com/blog/jmap-new-email-open-standard/) and attempts to make the technical ecosystem around email better.
+Don't get me wrong, Fastmail is a great service. If I didn't find out that masked email could be replaced by [DuckDuckGo Email Protection](https://duckduckgo.com/email/) I would probably still be using it[^1]. I'm especially fond of their investment in [JMAP](https://www.fastmail.com/blog/jmap-new-email-open-standard/) and attempts to make the technical ecosystem around email better. Also, if you want to have multiple custom domains routing to the same email platform, Fastmail is way more cost effective.
 
 But, having moved back to HEY, I've discovered that I'm easily swayed by software that can please and delight. Many of HEY's features are UX oddities that don't exactly nail down ways to make email better, but make the experience of using it more enjoyable. I think HEY gets it right most of the time.
 
-The calendar is a new addition in the time that I've been away, and it's... weird. Like with HEY itself it's doing a re-think that may or may not land for the user involved. For me, I've appreciated the to-do list that's bundled with the weekly view. It fits in my workflow perfectly (especially since I can't be bothered to use Reminders on iOS). I'm unsure how the Habit tracking or Journal will land, but they're interesting additions to the app. I'm not a big scheduler so I don't have many opinions on the calendar itself.
+The calendar is a new addition to HEY in the time that I've been away and it's interesting. I'm not hugely opinionated when it comes to calendars, I hardly use them outside of work where my company dictates the platform. The HEY calendar feels split between innovating for the sake of novelty and innovating for the sake of good ideas.
 
-HEY does still have some rough spots though:
+For one, there's no monthly view. Only day and week. Instead of viewing a complete month you view an endless scroll of weeks, with about three and a half fitting on the screen at any given time. The daily/weekly focus of HEY Calendar seems catered to daily activities: journaling, photography, and habit tracking. Not so much complicated scheduling workflows.
+
+HEY's email offering still has some rough spots as well:
 
 - No import from an existing email.
+- Adding additional custom domains is prohibitively expensive for a single user.
 - Feature rollout is asymmetrical, web and Android often outpace iOS.
 - Two separate apps for calendar and email (minor, but kind of annoying).
 - Journal integration with the calendar is interesting, but I'm hesitant to use it because there's no export.
