@@ -1,5 +1,5 @@
 ---
-title: Exploring the Writebook source code
+title: Exploring the Writebook Source Code
 date: 2024-10-13
 description: |
   Walking through the source code for 37signal's new
