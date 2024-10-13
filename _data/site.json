@@ -1,0 +1,9 @@
+{
+  "title": "mgmarlow.com",
+  "description": "Graham Marlow's blog",
+  "url": "https://mgmarlow.com",
+  "author": {
+    "name": "Graham Marlow",
+    "email": "blog@mgmarlow.com"
+  }
+}
