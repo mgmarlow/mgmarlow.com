@@ -1,6 +1,9 @@
 ---
 title: Exploring the Writebook source code
 date: 2024-10-13
+description: |
+  Walking through the source code for 37signal's new
+  book-publishing application, Writebook.
 ---
 
 Earlier this year 37signals released [Writebook](https://once.com/writebook), a self-hosted book publishing platform. It's offering number two from their [ONCE](https://once.com/) series, pitched as the antithesis of SaaS. Buy it once and own it for life, but run it on your own infrastructure.
