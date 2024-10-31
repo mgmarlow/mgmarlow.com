@@ -11,7 +11,7 @@ pagination:
 <div class="post-item-full">
   <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
   <div><small>{{ post.data.date | postDate }}</small></div>
-  <p>{{ post.templateContent | excerpt }}</p>
+  <p>{{ post.templateContent | excerpt }} <a href="{{ post.url | url }}">read more</a></p>
 </div>
 {%- endfor -%}
 
