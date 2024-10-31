@@ -3,7 +3,7 @@ title: Why I Still Use Apple Notes
 date: 2024-10-30
 description: |
   Productivity software preys upon novelty. New apps tout
-  new approaches that will always catch my in the allure
+  new approaches that will always catch me in the allure
   of efficiency. Let this ode to Apple Notes serve as a
   reminder that sometimes simple is better.
 ---
@@ -18,6 +18,6 @@ Every month or so I'll peruse my notes and organize them into better, more perma
 
 I've always been turned off by the term "second brain". Despite what productivity gurus say I don't think my simple notes will ever amount to some magnum opus of material, studied by historians in the distant future. Nor do I think there's much value in the nitpicky categorization that makes up a zettelkasten. I believe those who spend the majority of their time organizing notes and staring at their Obsidian graph view are fooling themselves into thinking they're more productive. Sure, it's pretty. But is my writing any better?
 
-Productivity software preys upon novelty. New apps tout new approaches that will always catch my in the allure of efficiency. Let this ode to Apple Notes serve as a reminder that sometimes simple is better.
+Productivity software preys upon novelty. New apps tout new approaches that will always catch me in the allure of efficiency. Let this ode to Apple Notes serve as a reminder that sometimes simple is better.
 
 [^1]: Part of my notetaking philosophy is that a note has served its purpose through the mechanism of its creation. Field Notes puts it well: "I'm not writing it down to remember it later, I'm writing it down to remember it now." So when I say 90% I mean it.
