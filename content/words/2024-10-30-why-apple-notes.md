@@ -1,6 +1,6 @@
 ---
 title: Why I Still Use Apple Notes
-date: 2024-10-24
+date: 2024-10-30
 description: |
   Productivity software preys upon novelty. New apps tout
   new approaches that will always catch my in the allure
