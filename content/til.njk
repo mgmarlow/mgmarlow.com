@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+---
+
+<h1>TIL</h1>
+
+{%- for til in collections.til -%}
+<div class="til-item">
+  <main>
+    <p>{{ til.date | postDate }}</p>
+    {{ til.content | safe }}
+  </main>
+</div>
+{%- endfor -%}
+
