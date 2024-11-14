@@ -1,3 +1,7 @@
+---
+title: Cool Rails concerns
+---
+
 There's something super elegant about [Writebook's](https://once.com/writebook) use
 of concerns. I especially like `Book:Sluggable`:
 

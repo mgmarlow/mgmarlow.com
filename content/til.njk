@@ -2,12 +2,14 @@
 layout: layouts/page.njk
 ---
 
-<h1>TIL</h1>
+<h1>today i learned</h1>
+
+<p>Tiny posts about stuff I like.</p>
 
 {%- for til in collections.til | reverse -%}
 <div class="til-item">
   <main>
-    <p>{{ til.date | postDate }}</p>
+    <p>{{ til.date | postDate }}: <strong>{{ til.data.title }}</strong></p>
     {{ til.content | safe }}
   </main>
 </div>

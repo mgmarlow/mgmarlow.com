@@ -1,3 +1,7 @@
+---
+title: Data migrations with data-migrate
+---
+
 What I traditionally would've used Rake tasks for has been replaced
 with [data-migrate](https://github.com/ilyakatz/data-migrate), a
 little gem that handles data migrations in the same way as Rails
