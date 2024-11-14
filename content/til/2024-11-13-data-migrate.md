@@ -1,5 +1,6 @@
 ---
 title: Data migrations with data-migrate
+date: 2024-11-13
 ---
 
 What I traditionally would've used Rake tasks for has been replaced

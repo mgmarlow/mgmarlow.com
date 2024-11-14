@@ -1,5 +1,6 @@
 ---
 title: Cool Rails concerns
+date: 2024-11-09
 ---
 
 There's something super elegant about [Writebook's](https://once.com/writebook) use

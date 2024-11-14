@@ -9,7 +9,7 @@ layout: layouts/page.njk
 {%- for til in collections.til | reverse -%}
 <div class="til-item">
   <main>
-    <p>{{ til.date | postDate }}: <strong>{{ til.data.title }}</strong></p>
+    <p>{{ til.data.date | postDate }}: <strong>{{ til.data.title }}</strong></p>
     {{ til.content | safe }}
   </main>
 </div>
