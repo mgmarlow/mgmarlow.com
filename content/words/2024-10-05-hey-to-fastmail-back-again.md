@@ -2,8 +2,8 @@
 title: HEY to Fastmail and Back Again
 date: 2024-10-05
 description: |
-  Moving back to HEY from Fastmail. How do I feel about the service
-  now that it's grown over two years?
+  Moving back to HEY from Fastmail. What's changed, and
+  why did I make the switch?
 ---
 
 I've read a few stories about folks moving their email from HEY to Fastmail, but have not seen any in the reverse direction. After two years of Fastmail, I'm moving back to HEY. Here are my thoughts.
