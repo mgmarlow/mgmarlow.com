@@ -1,5 +1,5 @@
-const { DateTime } = require('luxon')
+const { format } = require('date-fns')
 
 module.exports = function postDate(dateObj) {
-  return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
+  return format(dateObj, 'dd LLL, yyyy')
 }
