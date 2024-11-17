@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "lint": "prettier '{.eleventy.js,content/**/*.md}' --check"
+    "lint": "prettier '{.eleventy.js,_11ty/**/*.js,content/**/*.md}' --check"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",

@@ -1,9 +1,9 @@
-const striptags = require("striptags");
+const striptags = require('striptags')
 
-module.exports = function excerpt (post) {
+module.exports = function excerpt(post) {
   return striptags(post)
     .replace(/&quot;/g, '"')
     .substring(0, 200)
     .trim()
-    .concat("...");
+    .concat('...')
 }
