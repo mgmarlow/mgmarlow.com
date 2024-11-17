@@ -4,9 +4,13 @@ date: 2022-01-10
 updated: 2022-08-22
 ---
 
-A few weeks ago I revisited [ReScript](https://rescript-lang.org/) and experimented with the ecosystem during Advent of Code. I was pleased to discover that the language is in a much better place than four years ago.
+A few weeks ago I revisited [ReScript](https://rescript-lang.org/) and
+experimented with the ecosystem during Advent of Code. I was pleased to discover
+that the language is in a much better place than four years ago.
 
-Although I don't think I'll be writing ReScript in production any time soon, I put together a presentation today to introduce it to my colleagues. Below is the transcript of that presentation.
+Although I don't think I'll be writing ReScript in production any time soon, I
+put together a presentation today to introduce it to my colleagues. Below is the
+transcript of that presentation.
 
 ## What is it?
 
@@ -14,7 +18,9 @@ A strongly-typed language that compiles to JavaScript.
 
 - Powered by OCaml
 - Functional feel
-- More of a TypeScript competitor than alternatives like [Elm](https://elm-lang.org/), [PureScript](https://www.purescript.org/), or [ClojureScript](https://clojurescript.org/).
+- More of a TypeScript competitor than alternatives like
+  [Elm](https://elm-lang.org/), [PureScript](https://www.purescript.org/), or
+  [ClojureScript](https://clojurescript.org/).
 
 Why use it instead of TypeScript?
 
@@ -27,14 +33,18 @@ Why use it instead of TypeScript?
 
 Emphasizes:
 
-- [Functions](https://rescript-lang.org/docs/manual/latest/function#uncurried-function) over classes
-- [Pattern matching](https://rescript-lang.org/docs/manual/latest/pattern-matching-destructuring) over conditionals or virtual dispatches
-- [Data modeling](https://rescript-lang.org/docs/manual/latest/variant) (variants) over string abuse
+- [Functions](https://rescript-lang.org/docs/manual/latest/function#uncurried-function)
+  over classes
+- [Pattern matching](https://rescript-lang.org/docs/manual/latest/pattern-matching-destructuring)
+  over conditionals or virtual dispatches
+- [Data modeling](https://rescript-lang.org/docs/manual/latest/variant)
+  (variants) over string abuse
 - [First class support for React](https://rescript-lang.org/docs/react/latest/introduction)
 
 ## History
 
-You may recognize this project under a different name, [Reason](https://reasonml.github.io/).
+You may recognize this project under a different name,
+[Reason](https://reasonml.github.io/).
 
 - Used by Facebook Messenger
 - Promised strong types w/ safe inference derived from OCaml
@@ -105,20 +115,24 @@ let hasEvenLeaf = tree =>
 
 ## Type soundness
 
-The ReScript docs state that the ReScript type system is sounder than TypeScript’s. What does this mean in practice?
+The ReScript docs state that the ReScript type system is sounder than
+TypeScript’s. What does this mean in practice?
 
-> Most type systems make a guess at the type of a value and show you a type in your editor that's sometime incorrect. We don't do that.
+> Most type systems make a guess at the type of a value and show you a type in
+> your editor that's sometime incorrect. We don't do that.
 
 Quick points:
 
-- No `undefined` or `null`. There’s interop available, but they don’t exist in idiomatic ReScript
+- No `undefined` or `null`. There’s interop available, but they don’t exist in
+  idiomatic ReScript
 - Types are compiler-only constructs, they won’t affect your runtime performance
 - Type checking is way faster than `tsc`
 - Almost no need for annotations
 
 ### Why is TypeScript unsound?
 
-TypeScript doesn’t prioritize _soundness_, it prioritizes _completeness_ (which is totally fine!).
+TypeScript doesn’t prioritize _soundness_, it prioritizes _completeness_ (which
+is totally fine!).
 
 ```tsx
 const nums: number[] = []
@@ -132,7 +146,8 @@ console.log(adder(n, 2))
 
 [_playground link_](https://www.typescriptlang.org/play?#code/MYewdgzgLgBGCuBbCAuOSBGBTATgbQF0YBeGQgKFEljBPWTwAYDzLxoYBDAE29zoAUnNAkTYcAGhgYRmXAEoSAPnIwuMANTTWAeh0wA6gAtOsbiCwQYUIwEsrIeFAAOTgPxtIIADZYAdN4gAOZCvLgCYFIATPLy5EA)
 
-Meanwhile, ReScript will actually throw a compiler error when indexing an array, since there may not be an item at that index.
+Meanwhile, ReScript will actually throw a compiler error when indexing an array,
+since there may not be an item at that index.
 
 ```reason
 open Belt
@@ -151,7 +166,8 @@ adder(n, 2)
 //   Somewhere wanted: int
 ```
 
-We can fix the compiler error by wrapping the array access with a `switch` statement, defaulting the value to `0`.
+We can fix the compiler error by wrapping the array access with a `switch`
+statement, defaulting the value to `0`.
 
 ```reason
 open Belt
@@ -237,7 +253,8 @@ let fn = animal => {
 }
 ```
 
-This gives ReScript variants a lot more flexibility because the constructors can take arguments:
+This gives ReScript variants a lot more flexibility because the constructors can
+take arguments:
 
 ```reason
 type account =
@@ -289,10 +306,13 @@ switch licenseNumber {
 
 ## Belt
 
-The ReScript [standard library](https://rescript-lang.org/docs/manual/latest/api/belt).
+The ReScript
+[standard library](https://rescript-lang.org/docs/manual/latest/api/belt).
 
 - Immutable data structures
-- Safety by default (e.g. [array access runtime safety](https://rescript-lang.org/docs/manual/latest/api/belt#array-access-runtime-safety), Belt functions never throw exceptions)
+- Safety by default (e.g.
+  [array access runtime safety](https://rescript-lang.org/docs/manual/latest/api/belt#array-access-runtime-safety),
+  Belt functions never throw exceptions)
 - Tree-shakable, good performance (citation needed)
 
 ```reason
@@ -318,7 +338,8 @@ When should I not use Belt?
 - You want zero-cost abstractions
 - You want semantics similar to JS
 
-Personally, I like to replace the JS standard library with Belt entirely using this `bsconfig` setting:
+Personally, I like to replace the JS standard library with Belt entirely using
+this `bsconfig` setting:
 
 ```reason
 "bsc-flags": ["-open Belt"]
@@ -412,9 +433,11 @@ Setup:
 npx create-react-app a-todo-list
 ```
 
-Then follow the rescript-react [installation instructions](https://rescript-lang.org/docs/react/latest/installation)
+Then follow the rescript-react
+[installation instructions](https://rescript-lang.org/docs/react/latest/installation)
 
-Full project: [https://github.com/mgmarlow/rescript-cra](https://github.com/mgmarlow/rescript-cra)
+Full project:
+[https://github.com/mgmarlow/rescript-cra](https://github.com/mgmarlow/rescript-cra)
 
 ## Should I use ReScript?
 

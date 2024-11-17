@@ -6,16 +6,22 @@ tags: reading
 
 Talking about _Intro to Haiku_ by Harold Henderson.
 
-The 17 syllable (5-7-5) structure of Japanese haiku doesn't necessarily translate well into English, so Henderson prefers English haiku in the realm of 12-15. There are a few interesting reasons for this difference:
+The 17 syllable (5-7-5) structure of Japanese haiku doesn't necessarily
+translate well into English, so Henderson prefers English haiku in the realm of
+12-15. There are a few interesting reasons for this difference:
 
 - There are no articles (the, a, an, etc.) and very few pronouns in Japanese.
-- Punctuation is replaced by cut-words that have no translatable meaning but increase syllable count.
+- Punctuation is replaced by cut-words that have no translatable meaning but
+  increase syllable count.
 - Different grammar rules contribute to a very different sentence structure.
 
-That said, even with a shorter syllable count, short-long-short is still the recommended structure for haiku. The general guidelines for writing haiku are as follows.
+That said, even with a shorter syllable count, short-long-short is still the
+recommended structure for haiku. The general guidelines for writing haiku are as
+follows.
 
 - Follow a short-long-short rhythm with fewer than 17 syllables (often 12-15).
-- Include a single break in meaning that compares two adjacent, though dissimilar ideas.
+- Include a single break in meaning that compares two adjacent, though
+  dissimilar ideas.
 - Reflect on nature or one of the four seasons.
 - Try to share an experience of awareness with the reader.
 
