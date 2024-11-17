@@ -1673,6 +1673,7 @@ __metadata:
     "@11ty/eleventy-plugin-syntaxhighlight": "npm:^5.0.0"
     date-fns: "npm:^4.1.0"
     markdown-it-footnote: "npm:^4.0.0"
+    prettier: "npm:^3.3.3"
     striptags: "npm:^3.2.0"
   languageName: unknown
   linkType: soft
@@ -2107,6 +2108,15 @@ __metadata:
     posthtml-parser: "npm:^0.11.0"
     posthtml-render: "npm:^3.0.0"
   checksum: 10c0/0505cb70ece051206ffa932394181372be6390a974fd2f50e4e6fdd5d11e41feffba9a5f5e22809ca42899f79bd489d53ceac1d7ad0d782db9521b578e5b7f5a
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "prettier@npm:3.3.3"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/b85828b08e7505716324e4245549b9205c0cacb25342a030ba8885aba2039a115dbcf75a0b7ca3b37bc9d101ee61fab8113fc69ca3359f2a226f1ecc07ad2e26
   languageName: node
   linkType: hard
 
