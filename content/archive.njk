@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+eleventyImport:
+  collections: ["post"]
+---
+
+<h1>Archive</h1>
+
+<ul class="p-0">
+{%- for post in collections.post | reverse -%}
+  <li class="flex space-between mobile-block mobile-mb-1">
+    <p class="m-0 p-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></p>
+    <time>{{ post.data.date | postDate }}</time>
+  </li>
+{%- endfor -%}
+</ul>

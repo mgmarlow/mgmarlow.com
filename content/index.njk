@@ -1,33 +1,49 @@
 ---
 layout: layouts/page.njk
-pagination:
-  data: collections.post
-  size: 12
-  alias: posts
-  reverse: true
 ---
 
-{%- for post in posts -%}
-<div class="post-item-full">
-  <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-  <div><small>{{ post.data.date | postDate }}</small></div>
-  <p>{{ post.data.description or (post.templateContent | excerpt) }}</p>
-</div>
-{%- endfor -%}
+<div>
+  <h1>Hi, I'm Graham Marlow.</h1>
 
-<ol style="list-style: none; display: flex; margin: 0; padding: 0;">
-  <li style="margin-right: 1rem;">
-    {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}">prev</a>
-    {% else %}
-    prev
-    {% endif %}
-  </li>
-  <li>
-    {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}">next</a>
-    {% else %}
-    next
-    {% endif %}
-  </li>
-</ol>
+  <p>I'm a software engineer based in California. I mostly blog about programming.</p>
+
+  <p>
+    I have a bunch of code available for your perusal on my
+    <a href="https://github.com/mgmarlow">Github</a>. I'm also
+    a casual <a href="https://crosshare.org/mgmarlow">crossword
+    constructor</a> and occasional
+    <a href="https://mgmarlow.itch.io/">game jammer</a>. If you want
+    to send me a comment about one of my posts, games, whatever,
+    send an email to
+    <a href="{{ site.author.email }}">{{ site.author.email }}</a>.
+  </p>
+</div>
+
+<section>
+  <h2>Recent posts</h2>
+  <ul class="p-0">
+  {%- for post in collections.post | reverse | head(4) -%}
+    <li class="flex space-between mobile-block mobile-mb-1">
+      <p class="m-0 p-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></p>
+      <time>{{ post.data.date | postDate }}</time>
+    </li>
+  {%- endfor -%}
+  </ul>
+
+  <p><a href="{{ '/archive' | url }}">More in the archive</a></p>
+</section>
+
+<section>
+  <h2>Recent projects</h2>
+
+  <ul class="list-none p-0">
+  {%- for p in projects -%}
+    <li>
+      <p class="m-0">
+        <a href="{{ p.url }}">{{ p.title }}</a> - {{ p.description }}.
+      </p>
+    </li>
+  {%- endfor -%}
+  <ul>
+</section>
+

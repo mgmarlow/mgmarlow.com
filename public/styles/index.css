@@ -29,7 +29,7 @@
 ::backdrop {
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
     --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-    --base-fontsize: 16px;
+    --base-fontsize: 18px;
     --line-height: 1.5;
 
     /* theme */
@@ -66,9 +66,13 @@ body {
     background-color: var(--bg);
     font-size: var(--base-fontsize);
     line-height: var(--line-height);
-    max-width: 45rem;
+    max-width: 48rem;
     margin: 0 auto;
     padding: 1rem;
+}
+
+pre code[class*="language-"] {
+    font-size: 0.9rem;
 }
 
 main {
@@ -88,49 +92,13 @@ pre, code {
     font-family: var(--monospace-font);
 }
 
-pre[class*="language-"] {
-    line-height: 1.2 !important;
-}
-
-pre code[class*="language-"] {
-    border: none;
-    line-height: 1.2;
-}
-
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
     color: var(--text);
 }
 
-h1 {
-    font-size: 2.6rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 3rem;
-}
-
-h3 {
-    font-size: 1.44rem;
-    margin-top: 3rem;
-}
-
-h4 {
-    font-size: 1.15rem;
-}
-
-h1, h2, h3 {
-    line-height: 1.1;
-}
-
-p {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
+img, video {
+    height: auto;
+    max-width: 100%;
 }
 
 a {
@@ -149,49 +117,6 @@ blockquote {
     margin-inline-start: 1rem;
     border-inline-start: 0.35rem solid #eee;
     padding: 0 0.85rem;
-}
-
-.posttitle {
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    margin-top: 0rem;
-}
-
-.post-item {
-    margin-bottom: 1rem;
-}
-.post-item-full {
-    margin-bottom: 2rem;
-}
-.post-item-full h2 {
-    font-size: 1.44em;
-    margin-bottom: 0rem;
-}
-.post-item-full p {
-    margin-top: 0rem;
-}
-
-.links-table {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: .2rem 1rem;
-}
-@media only screen and (max-width: 720px) {
-    .links-table {
-        display: block;
-    }
-}
-
-.header {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-}
-.header a {
-    margin-right: 1rem;
-    font-weight: bold;
 }
 
 .nohighlight, .nohighlight:visited {

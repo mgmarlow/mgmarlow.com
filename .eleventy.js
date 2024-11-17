@@ -15,6 +15,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('postDate', postDate)
   eleventyConfig.addFilter('excerpt', excerpt)
 
+  eleventyConfig.addFilter('head', (arr, n) => {
+    const result = []
+
+    for (let i = 0; i < n; i++) {
+      result.push(arr[i])
+    }
+
+    return result
+  })
+
+  eleventyConfig.addFilter('tail', (arr, n) => {
+    const result = []
+
+    for (let i = arr.length - n; i < arr.length; i++) {
+      result.push(arr[i])
+    }
+
+    return result
+  })
+
   eleventyConfig.addCollection('allTags', allTags)
 
   return {

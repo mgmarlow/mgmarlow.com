@@ -1,0 +1,28 @@
+[
+  {
+    "title": "kat's ghost",
+    "url": "https://mgmarlow.itch.io/kajam2024",
+    "description": "block-pushing puzzle goodness for KAJAM 2024"
+  },
+  {
+    "title": "Start Emacs",
+    "url": "https://github.com/mgmarlow/start-emacs",
+    "description": "start your Emacs config with a single command"
+  },
+  {
+    "title": "Shuffle hustle",
+    "url": "https://mgmarlow.itch.io/shuffle-hustle",
+    "description": "tiny word game inspired by NYT's Spelling Bee"
+  },
+  {
+    "title": "Swapper",
+    "url": "https://mgmarlow.itch.io/swapper",
+    "description": "puzzlescript game with swapping mechanics"
+  },
+  {
+    "title": "git-share",
+    "url": "https://github.com/mgmarlow/git-share",
+    "description": "share code links with colleagues"
+  }
+]
+
