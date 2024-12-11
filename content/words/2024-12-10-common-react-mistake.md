@@ -1,6 +1,10 @@
 ---
 title: The Most Common React Mistake
 date: 2024-12-10
+description: |
+  React promises that "learning React is learning programming"
+  but the framework has its own share of subtle complexities
+  that stretch well beyond vanilla JavaScript.
 ---
 
 The React homepage promises that "learning React is learning programming" and I
@@ -213,7 +217,7 @@ the memoization achieves that goal.
 Now that we know more about how `useState` works behind the scenes, we can find
 a different solution for the problem of handling asynchronous initial state.
 
-### Solution: handle the pending state
+## Solution: handle the pending state
 
 So what should you do instead? The easiest solution is to have the parent
 component own the loading state:

@@ -22,7 +22,7 @@ layout: layouts/page.njk
 <section>
   <h2>Recent posts</h2>
   <ul class="p-0">
-  {%- for post in collections.post | reverse | head(4) -%}
+  {%- for post in collections.post | reverse | head(5) -%}
     <li class="flex space-between mobile-block spacing">
       <p class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></p>
       <time>{{ post.data.date | postDate }}</time>
