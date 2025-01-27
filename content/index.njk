@@ -21,11 +21,14 @@ layout: layouts/page.njk
 
 <section>
   <h2>Recent posts</h2>
-  <ul class="p-0">
+
+  <ul class="p-0 list-none">
   {%- for post in collections.post | reverse | head(5) -%}
-    <li class="flex space-between mobile-block spacing">
-      <p class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></p>
-      <time>{{ post.data.date | postDate }}</time>
+    <li class="mobile-block spacing-2">
+      <h3 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+      <p class="m-0">
+        <em><time>{{ post.data.date | postDate }}</time></em> - {{ post.data.description }}
+      </p>
     </li>
   {%- endfor -%}
   </ul>
@@ -36,14 +39,10 @@ layout: layouts/page.njk
 <section>
   <h2>Recent projects</h2>
 
-  <ul>
-  {%- for p in projects -%}
-    <li class="spacing">
-      <p class="m-0">
-        <a href="{{ p.url }}">{{ p.title }}</a>, {{ p.description }}.
-      </p>
-    </li>
-  {%- endfor -%}
-  <ul>
+  <p class="m-0">
+    {%- for p in projects -%}
+      <a href="{{ p.url }}">{{ p.title }}</a>{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+  </p>
 </section>
 
