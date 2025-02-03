@@ -1,5 +1,5 @@
-const { format } = require('date-fns')
+import { format } from 'date-fns'
 
-module.exports = function postDate(dateObj) {
+export default function postDate(dateObj) {
   return format(dateObj, 'dd LLL, yyyy')
 }

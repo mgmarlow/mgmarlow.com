@@ -1,13 +1,14 @@
-const CleanCSS = require('clean-css')
-const mdFootnote = require('markdown-it-footnote')
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginRss = require('@11ty/eleventy-plugin-rss')
+import CleanCSS from 'clean-css'
+import mdFootnote from 'markdown-it-footnote'
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import pluginRss from '@11ty/eleventy-plugin-rss'
 
-const postDate = require('./_11ty/filters/postDate')
-const excerpt = require('./_11ty/filters/excerpt')
-const allTags = require('./_11ty/collections/allTags')
+import postDate from './_11ty/filters/postDate.js'
+import excerpt from './_11ty/filters/excerpt.js'
+import allTags from './_11ty/collections/allTags.js'
 
-module.exports = function (eleventyConfig) {
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig  */
+export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '/' })
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)

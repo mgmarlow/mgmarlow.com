@@ -1,4 +1,4 @@
-module.exports = async function allTags(api) {
+export default async function allTags(api) {
   const items = await api.getAll()
 
   return items

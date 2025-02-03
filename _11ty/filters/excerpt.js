@@ -1,6 +1,6 @@
-const striptags = require('striptags')
+import striptags from 'striptags'
 
-module.exports = function excerpt(post) {
+export default function excerpt(post) {
   return striptags(post)
     .replace(/&quot;/g, '"')
     .substring(0, 200)
