@@ -2,47 +2,13 @@
 layout: layouts/page.njk
 ---
 
-<div>
-  <h1>Hi, I'm Graham Marlow.</h1>
+{%- for post in collections.post | reverse | head(10) -%}
+  <article class="mobile-block spacing-4">
+    <h3 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+    <p class="m-0"><small><time>{{ post.data.date | postDate }}</time></small></p>
+    <p>{{ post.data.description }}</p>
+    <p><a href="{{ post.url | url }}">Continue reading →</a></p>
+  </article>
+{%- endfor -%}
 
-  <p>I'm a software engineer based in California. I mostly blog about programming.</p>
-
-  <p>
-    I have a bunch of code available for your perusal on my
-    <a href="https://github.com/mgmarlow">Github</a>. I'm also
-    a casual <a href="https://crosshare.org/mgmarlow">crossword
-    constructor</a> and occasional
-    <a href="https://mgmarlow.itch.io/">game jammer</a>, if either
-    of those things spark your interest. Feel free to send me a
-    comment at
-    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
-  </p>
-</div>
-
-<section>
-  <h2>Recent posts</h2>
-
-  <ul class="p-0 list-none">
-  {%- for post in collections.post | reverse | head(5) -%}
-    <li class="mobile-block spacing-2">
-      <h3 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
-      <p class="m-0">
-        <em><time>{{ post.data.date | postDate }}</time></em> - {{ post.data.description }}
-      </p>
-    </li>
-  {%- endfor -%}
-  </ul>
-
-  <p>→ <a href="{{ '/archive' | url }}">More in the archive</a></p>
-</section>
-
-<section>
-  <h2>Recent projects</h2>
-
-  <p class="m-0">
-    {%- for p in projects -%}
-      <a href="{{ p.url }}">{{ p.title }}</a>{% if not loop.last %}, {% endif %}
-    {%- endfor -%}
-  </p>
-</section>
-
+<p>→ <a href="{{ '/archive' | url }}">More in the archive</a></p>

@@ -14,8 +14,14 @@
 }
 
 .spacing-2:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
+
+.spacing-4:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.text-center { text-align: center; }
 
 @media only screen and (max-width: 720px) {
   .mobile-mb-1 {

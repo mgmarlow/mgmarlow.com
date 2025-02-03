@@ -30,7 +30,9 @@
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
     --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     --base-fontsize: 18px;
-    --line-height: 1.5;
+    --line-height: 1.5666;
+    --site-width: 40rem;
+    --header-width: 64rem;
 
     /* theme */
     --bg: #fff;
@@ -66,18 +68,23 @@ body {
     background-color: var(--bg);
     font-size: var(--base-fontsize);
     line-height: var(--line-height);
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 1rem;
 }
 
 pre code[class*="language-"] {
     font-size: 0.9rem;
 }
 
+header nav {
+    max-width: var(--header-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 main {
-    margin: 3rem auto;
+    max-width: var(--site-width);
+    margin: 2rem auto;
     margin-bottom: 5rem;
+    padding: 1rem;
 }
 
 footer {
