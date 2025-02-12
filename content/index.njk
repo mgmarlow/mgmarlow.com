@@ -2,12 +2,12 @@
 layout: layouts/page.njk
 ---
 
-{%- for post in collections.post | reverse | head(10) -%}
+{%- for post in collections.post | reverse | head(4) -%}
   <article class="mobile-block spacing-4">
-    <h3 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+    <h2 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
     <p class="m-0"><small><time>{{ post.data.date | postDate }}</time></small></p>
-    <p>{{ post.data.description }}</p>
-    <p><a href="{{ post.url | url }}">Continue reading →</a></p>
+    <p>{{ post.content | safe }}
+    <p><a href="{{ post.url | url }}">Read more</a></p>
   </article>
 {%- endfor -%}
 

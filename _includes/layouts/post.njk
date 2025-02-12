@@ -11,17 +11,9 @@
   <article>
     <div>
       <h1 class="posttitle">{{ title }}</h1>
-      <p class="subtitle">
-        <small>
-          <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate  if updated }}</em></span>
-          <span>
-            {% for tag in tags %}
-              {% if tag !== "post" %}
-                <a class="ml-2 tag" href="{{ '/tags/' + tag | url }}">{{ tag }}</a>
-              {% endif %}
-            {% endfor %}
-          </span>
-        </small>
+      <p class="m-0">
+        <span><time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate if updated }}</em></span>
+        by {{ site.author.name }}
       </p>
     </div>
     {{ content | safe }}
