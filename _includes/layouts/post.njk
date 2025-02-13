@@ -3,10 +3,6 @@
 {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.post | getNextCollectionItem(page) %}
 
-{% block header %}
-{% include "header.njk" %}
-{% endblock %}
-
 {% block content %}
   <article>
     <div>
@@ -24,6 +20,6 @@
   <div>
     <br />
 
-    <p>Thanks for reading! Send your comments to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
+    <p>Thanks for reading! <a href="mailto:{{ site.author.email }}">Comment by email</a>.</p>
   </div>
 {% endblock %}

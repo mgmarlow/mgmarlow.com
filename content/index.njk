@@ -6,9 +6,9 @@ layout: layouts/page.njk
   <article class="mobile-block spacing-4">
     <h2 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
     <p class="m-0"><small><time>{{ post.data.date | postDate }}</time></small></p>
-    <p>{{ post.content | safe }}
-    <p><a href="{{ post.url | url }}">Read more</a></p>
+    <p>{{ post.content | excerpt(500) }}
+    <p><small><a href="{{ post.url | url }}">Read more</a></small></p>
   </article>
 {%- endfor -%}
 
-<p>→ <a href="{{ '/archive' | url }}">More in the archive</a></p>
+<p><a href="{{ '/archive' | url }}">More in the archive →</a></p>
