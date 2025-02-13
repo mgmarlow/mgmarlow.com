@@ -6,9 +6,9 @@ tags: emacs
 
 The thing I credit most for sticking with Emacs after several failed attempts is
 building my own configuration [from
-scratch]({{ '/words/2022-05-02-learning-emacs' | url }}). Not only was the project
-easier than expected, it left me with the distinctive fullness created by the product
-of joyful work.
+scratch]({{ '/words/2022-05-02-learning-emacs' | url }}). Not only was the
+project easier than expected, it left me with the distinctive fullness created
+by the product of joyful work.
 
 My previous experiments with frameworks like
 [Doom Emacs](https://github.com/doomemacs/doomemacs) or

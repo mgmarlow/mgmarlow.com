@@ -3,25 +3,13 @@
 {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.post | getNextCollectionItem(page) %}
 
-{% block header %}
-{% include "header.njk" %}
-{% endblock %}
-
 {% block content %}
   <article>
     <div>
       <h1 class="posttitle">{{ title }}</h1>
-      <p class="subtitle">
-        <small>
-          <span>Posted: <time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate  if updated }}</em></span>
-          <span>
-            {% for tag in tags %}
-              {% if tag !== "post" %}
-                <a class="ml-2 tag" href="{{ '/tags/' + tag | url }}">{{ tag }}</a>
-              {% endif %}
-            {% endfor %}
-          </span>
-        </small>
+      <p class="m-0">
+        <span><time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate if updated }}</em></span>
+        by {{ site.author.name }}
       </p>
     </div>
     {{ content | safe }}
@@ -32,6 +20,6 @@
   <div>
     <br />
 
-    <p>Thanks for reading! Send your comments to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
+    <p>Thanks for reading! <a href="mailto:{{ site.author.email }}">Comment by email</a>.</p>
   </div>
 {% endblock %}

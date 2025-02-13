@@ -1,0 +1,15 @@
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+  <article>
+    <div>
+      <h1 class="posttitle">TIL: {{ title }}</h1>
+      <p class="m-0">
+        <span><time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate if updated }}</em></span>
+        by {{ site.author.name }}
+      </p>
+    </div>
+
+    {{ content | safe }}
+  </article>
+{% endblock %}

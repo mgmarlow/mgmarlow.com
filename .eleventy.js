@@ -1,41 +1,36 @@
-const mdFootnote = require('markdown-it-footnote')
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginRss = require('@11ty/eleventy-plugin-rss')
+import CleanCSS from 'clean-css'
+import mdFootnote from 'markdown-it-footnote'
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import pluginRss from '@11ty/eleventy-plugin-rss'
 
-const postDate = require('./_11ty/filters/postDate')
-const excerpt = require('./_11ty/filters/excerpt')
-const allTags = require('./_11ty/collections/allTags')
+import pluginFilters from './_11ty/filters.js'
 
-module.exports = function (eleventyConfig) {
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig  */
+export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: '/' })
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.amendLibrary('md', (md) => md.use(mdFootnote))
 
-  eleventyConfig.addFilter('postDate', postDate)
-  eleventyConfig.addFilter('excerpt', excerpt)
-
-  eleventyConfig.addFilter('head', (arr, n) => {
-    const result = []
-
-    for (let i = 0; i < n; i++) {
-      result.push(arr[i])
-    }
-
-    return result
+  eleventyConfig.addFilter('cssmin', (code) => {
+    return new CleanCSS({}).minify(code).styles
   })
 
-  eleventyConfig.addFilter('tail', (arr, n) => {
-    const result = []
+  eleventyConfig.addPlugin(pluginFilters)
 
-    for (let i = arr.length - n; i < arr.length; i++) {
-      result.push(arr[i])
-    }
+  eleventyConfig.addCollection('allTags', async (api) => {
+    const items = await api.getAll()
 
-    return result
+    return items
+      .flatMap((i) => i.data.tags)
+      .filter((tag, i, self) => {
+        if (!tag || tag === 'post') {
+          return false
+        }
+
+        return self.indexOf(tag) === i
+      })
   })
-
-  eleventyConfig.addCollection('allTags', allTags)
 
   return {
     templateFormats: ['md', 'njk', 'html'],

@@ -1,36 +1,12 @@
-@font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Regular.woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Italic.woff2");
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Bold.woff2");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-BoldItalic.woff2");
-    font-style: italic;
-    font-weight: 700;
-}
-
 :root,
 ::backdrop {
     --monospace-font: Consolas, Menlo, Monaco, "Ubuntu Mono", monospace;
     --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    --serif-font: "Libre Baskerville", serif;
     --base-fontsize: 18px;
-    --line-height: 1.5;
+    --line-height: 1.6;
+    --content-width: 40rem;
+    --site-width: 96rem;
 
     /* theme */
     --bg: #fff;
@@ -54,7 +30,7 @@
 }
 
 html {
-    font-family: var(--sans-font);
+    font-family: var(--serif-font);
 }
 
 p, h1, h2, h3, h4, h5, h6, li, a {
@@ -62,22 +38,29 @@ p, h1, h2, h3, h4, h5, h6, li, a {
 }
 
 body {
+    max-width: var(--site-width);
     color: var(--text-light);
     background-color: var(--bg);
     font-size: var(--base-fontsize);
     line-height: var(--line-height);
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 1rem;
 }
 
 pre code[class*="language-"] {
     font-size: 0.9rem;
 }
 
+.container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+header nav {
+    padding: 1rem;
+}
+
 main {
-    margin: 3rem auto;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
 }
 
 footer {
@@ -121,4 +104,39 @@ blockquote {
 
 .nohighlight, .nohighlight:visited {
     color: var(--text-light);
+}
+
+.list-none { list-style: none; }
+
+.flex { display: flex; }
+.space-between { justify-content: space-between; }
+.inline-block { display: inline-block; }
+
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+.mr-1 { margin-right: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+
+.spacing:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.spacing-2:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.spacing-4:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.text-center { text-align: center; }
+
+@media only screen and (max-width: 720px) {
+  .mobile-mb-1 {
+    margin-bottom: 1rem;
+  }
+
+  .mobile-block {
+    display: block;
+  }
 }

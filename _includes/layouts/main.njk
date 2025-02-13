@@ -8,23 +8,29 @@
     <meta name="description" content="{{ description or site.description }}"/>
     <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
     <link rel="alternate" type="application/rss+xml" title="Graham Marlow" href="https://mgmarlow.com/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="{{ '/styles/normalize.css' | url }}" rel="stylesheet"/>
-    <link href="{{ '/styles/atomic.css' | url }}" rel="stylesheet"/>
-    <link href="{{ '/styles/index.css' | url }}" rel="stylesheet"/>
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
+    {% set css %} {% include "index.css" %} {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
   </head>
   <body>
-    {% block header %}
-    {% endblock %}
+    <div class="container">
+      {% include "header.njk" %}
 
-    <main>
-      {% block content %}
-      {{ content | safe }}
-      {% endblock %}
+      <main>
+        {% block content %}
+        {{ content | safe }}
+        {% endblock %}
 
-      {% block footer %}
-      {% endblock %}
-    </main>
+        {% block footer %}
+        {% endblock %}
+      </main>
+    </div>
 
     {% include "footer.njk" %}
   </body>
