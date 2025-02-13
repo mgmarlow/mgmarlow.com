@@ -5,11 +5,18 @@ layout: layouts/page.njk
 
 # Hi, I'm Graham Marlow.
 
-I'm a software engineer based in California. I mostly blog about programming.
+I'm a software engineer based in California. I mostly blog about programming and
+puzzles.
 
-I have a bunch of code available for your perusal on my
-[Github](https://github.com/mgmarlow). I'm also a casual
-[crossword constructor](https://crosshare.org/mgmarlow) and occasional
-[game jammer](https://mgmarlow.itch.io/), if either of those things spark your
-interest. Feel free to send me a comment at [{{ site.author.email
-}}](mailto:{{ site.author.email }}).
+Here are some links to other areas where I'm active:
+
+- [Github & open source](https://github.com/mgmarlow)
+- [Crossword puzzles](https://crosshare.org/mgmarlow)
+- [Games and jam submissions](https://mgmarlow.itch.io/)
+
+Recently I added [TIL]({{ '/til' | url }}) to this site, following in the steps
+of [Julia Evans](https://jvns.ca/blog/2024/11/09/new-microblog/). It's a dumping
+ground for quotes, code snippets, and anything else that doesn't make its way
+into a proper article.
+
+Send comments to [{{ site.author.email }}](mailto:{{ site.author.email }}).

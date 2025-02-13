@@ -2,14 +2,16 @@ import striptags from 'striptags'
 import { format } from 'date-fns'
 
 const pluginFilters = (eleventyConfig) => {
-  eleventyConfig.addFilter('postDate', (dateObj) => format(dateObj, 'dd LLL, yyyy'))
+  eleventyConfig.addFilter('postDate', (dateObj) =>
+    format(dateObj, 'dd LLL, yyyy'),
+  )
 
   eleventyConfig.addFilter('excerpt', (content, n = 200) => {
-    const start = content.toLowerCase().indexOf('<p>');
-    const end = content.toLowerCase().indexOf('</p>');
-    
+    const start = content.toLowerCase().indexOf('<p>')
+    const end = content.toLowerCase().indexOf('</p>')
+
     // length of <p>
-    return striptags(content.substring(start + 3, end));
+    return striptags(content.substring(start + 3, end))
   })
 
   eleventyConfig.addFilter('head', (arr, n) => {

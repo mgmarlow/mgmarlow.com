@@ -2,6 +2,8 @@
 layout: layouts/page.njk
 ---
 
+<h1>Graham Marlow</h1>
+
 {%- for post in collections.post | reverse | head(4) -%}
   <article class="mobile-block spacing-4">
     <h2 class="m-0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
