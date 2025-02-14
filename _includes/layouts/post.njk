@@ -8,8 +8,10 @@
     <div>
       <h1 class="posttitle">{{ title }}</h1>
       <p class="m-0">
-        <span><time>{{ date | postDate }}</time><em>{{ '; Updated: ' + updated | postDate if updated }}</em></span>
-        by {{ site.author.name }}
+        <small>
+          <span><time>{{ date | postDate }}</time>{{ ' (updated: ' + updated | postDate + ')' if updated }}</span>
+          by {{ site.author.name }}
+        </small>
       </p>
     </div>
     {{ content | safe }}
