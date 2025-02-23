@@ -4,6 +4,10 @@
 {% set nextPost = collections.post | getNextCollectionItem(page) %}
 
 {% block content %}
+  {% if "emacs" in tags %}
+    {% include "bookpromo.njk" %}
+  {% endif %}
+
   <article>
     <div>
       <h1 class="posttitle">{{ title }}</h1>
