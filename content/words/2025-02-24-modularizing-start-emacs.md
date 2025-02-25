@@ -129,7 +129,7 @@ the file:
 ;;; evil-module.el ends here
 ```
 
-### Step three: require your module
+## Step three: require your module
 
 Back in our Init File, we need to signal for Emacs to load our new module
 automatically. After the spot where we amended the Emacs load path, go ahead and
