@@ -8,8 +8,13 @@ if ARGV.empty?
 end
 
 original_filename = ARGV[0]
+til = ARGV[1] === "--til"
 today = Date.today.strftime("%Y-%m-%d")
-path = File.join("content/words", "#{today}-#{original_filename}.md")
+path = if til
+  File.join("content/til", "#{today}-#{original_filename}.md")
+else
+  File.join("content/words", "#{today}-#{original_filename}.md")
+end
 
 File.open(path, "w") do |f|
   f.puts "---"
