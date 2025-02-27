@@ -34,7 +34,7 @@ const schema = z
     a: z.string(),
     b: z.string(),
   })
-  .refine((values) => complexValidation(values.a, values.b), {
+  .refine((values) => !complexValidation(values.a, values.b), {
     message: 'complex_a_b error',
   })
 ```
@@ -61,7 +61,7 @@ const base = z.object({
 const schema = z.preprocess((input, ctx) => {
   const parsed = base.pick({ a: true, b: true }).safeParse(input)
   if (parsed.success) {
-    const { a, a } = parsed.data
+    const { a, b } = parsed.data
     if (complexValidation(a, b)) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
