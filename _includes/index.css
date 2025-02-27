@@ -4,8 +4,9 @@
     --sans-font: "Inter", Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     --serif-font: "Libre Baskerville", serif;
     --base-fontsize: 18px;
+    --code-fontsize: 14px;
     --line-height: 1.6;
-    --content-width: 40rem;
+    --content-width: 42rem;
     --site-width: 96rem;
 
     /* theme */
@@ -46,7 +47,7 @@ body {
 }
 
 pre code[class*="language-"] {
-    font-size: 0.9rem;
+    font-size: var(--code-fontsize);
 }
 
 .container {
@@ -77,6 +78,10 @@ pre, code {
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--text);
+}
+
+h2 {
+    margin-top: 2rem;
 }
 
 img, video {
