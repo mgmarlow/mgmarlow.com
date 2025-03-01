@@ -4,6 +4,8 @@ layout: layouts/page.njk
 
 <h1>Today I Learned</h1>
 
+<p><a href="{{ '/til-feed.xml' | url }}">RSS feed</a></p>
+
 {%- for til in collections.til | reverse -%}
 <article class="spacing-4">
   <h2><a href="{{ til.url | url }}">{{ til.data.date | postDate }}: <strong>{{ til.data.title }}</strong></a></h2>
