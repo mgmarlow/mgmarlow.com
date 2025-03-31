@@ -41,16 +41,41 @@ URI.open("https://jvns.ca/atom.xml") do |raw|
 end
 ```
 
-The need for a case statement is kind of frustrating.
+The need to handle both standards independently is kind of frustrating.
 
-On one hand, I understand where the library is coming from in that it's not a
-feed-reading gem but an RSS gem, so the parsed methods should exactly match the
-intended specification. On the other hand, a common interface for both standards
-would be a nice quality of life improvement.
+That said, it does make sense from a library perspective. The RSS gem is
+principally concerned with parsing XML per the RSS and Atom standards,
+returning objects that correspond one-to-one. Any conveniences for general
+feed reading are left to the application.
+
+Wrapping the RSS gem in another class helps encapsulate differences in
+standards:
+
+```rb
+class FeedReader
+  attr_reader :title
+
+  def initialize(url)
+    @url = url
+  end
+
+  def fetch
+    feed = URI.open(@url) { |r| RSS::Parser.parse(r) }
+
+    case feed
+    when RSS::Rss
+      @title = feed.channel.title
+    when RSS::Atom::Feed
+      @title = feed.title.content
+    end
+  end
+end
+```
 
 Worse than dealing with competing standards is the fact that not everyone
 publishes the content of an article as part of their feed. Many bloggers only
-use RSS as a link aggregator that points subscribers to their webpage:
+use RSS as a link aggregator that points subscribers to their webpage, omitting
+the content entirely:
 
 ```xml
 <rss version="2.0">
@@ -68,24 +93,23 @@ use RSS as a link aggregator that points subscribers to their webpage:
 </rss>
 ```
 
-How does an RSS reader handle this situation? The solution varies based on the
-app. The two I've tested (NetNewsWire and Readwise Reader) manage to include the
-entire article content directly in the app (assuming the content isn't paywalled
-or hidden behind authentication). I figure they make an HTTP request to the
-article URL and scrape the resulting HTML for the article content.
+How do RSS readers handle this situation? The solution varies based on the app.
 
-If you've ever used Firefox, there's a feature called
+The two I've tested, NetNewsWire and Readwise Reader, manage to include the entire
+article content in the app, despite the RSS feed omitting it (assuming no paywalls).
+My guess is these services make an HTTP request to the source, scraping the resulting
+HTML for the article content and ignoring everything else.
+
+Firefox users are likely familiar with a feature called
 [Reader View](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages)
-that hides the extraneous content of a webpage and displays its text content
-with a minimal, reading-focused stylesheet. The JS library that Firefox uses is
-open source on their Github:
-[mozilla/readability](https://github.com/mozilla/readability). Depending on your
-stack, you could probably feed the HTML result of the feed's matching HTML
-webpage and get back a minimal content result to display in a reader app.
+that transforms a webpage into its bare-minimum content. All of the layout
+elements are removed in favor of highlighting the text of the page. The JS library
+that Firefox uses is open source on their Github:
+[mozilla/readability](https://github.com/mozilla/readability).
 
 On the Ruby side of things there's a handy port called
-[ruby-readability](https://github.com/cantino/ruby-readability). Applying that
-theory to a practical example looks something like this:
+[ruby-readability](https://github.com/cantino/ruby-readability) that we can use to
+extract omitted article content directly from the associated website:
 
 ```rb
 require "open-uri"
