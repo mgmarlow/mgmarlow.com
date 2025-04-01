@@ -26,9 +26,6 @@ a feed reader must handle both formats.
 Adding Atom support introduces an extra branch to our snippet:
 
 ```rb
-require "open-uri"
-require "rss"
-
 URI.open("https://jvns.ca/atom.xml") do |raw|
   feed = RSS::Parser.parse(raw)
 
@@ -44,9 +41,9 @@ end
 The need to handle both standards independently is kind of frustrating.
 
 That said, it does make sense from a library perspective. The RSS gem is
-principally concerned with parsing XML per the RSS and Atom standards,
-returning objects that correspond one-to-one. Any conveniences for general
-feed reading are left to the application.
+principally concerned with parsing XML per the RSS and Atom standards, returning
+objects that correspond one-to-one. Any conveniences for general feed reading
+are left to the application.
 
 Wrapping the RSS gem in another class helps encapsulate differences in
 standards:
@@ -95,25 +92,24 @@ the content entirely:
 
 How do RSS readers handle this situation? The solution varies based on the app.
 
-The two I've tested, NetNewsWire and Readwise Reader, manage to include the entire
-article content in the app, despite the RSS feed omitting it (assuming no paywalls).
-My guess is these services make an HTTP request to the source, scraping the resulting
-HTML for the article content and ignoring everything else.
+The two I've tested, NetNewsWire and Readwise Reader, manage to include the
+entire article content in the app, despite the RSS feed omitting it (assuming no
+paywalls). My guess is these services make an HTTP request to the source,
+scraping the resulting HTML for the article content and ignoring everything
+else.
 
 Firefox users are likely familiar with a feature called
 [Reader View](https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages)
 that transforms a webpage into its bare-minimum content. All of the layout
-elements are removed in favor of highlighting the text of the page. The JS library
-that Firefox uses is open source on their Github:
+elements are removed in favor of highlighting the text of the page. The JS
+library that Firefox uses is open source on their Github:
 [mozilla/readability](https://github.com/mozilla/readability).
 
 On the Ruby side of things there's a handy port called
-[ruby-readability](https://github.com/cantino/ruby-readability) that we can use to
-extract omitted article content directly from the associated website:
+[ruby-readability](https://github.com/cantino/ruby-readability) that we can use
+to extract omitted article content directly from the associated website:
 
 ```rb
-require "open-uri"
-require "rss"
 require "ruby-readability"
 
 URI.open("https://jvns.ca/atom.xml") do |raw|
