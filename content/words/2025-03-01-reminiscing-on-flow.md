@@ -9,6 +9,8 @@ excerpt: |
   React sunsets Create React App and I feel nostalgic. Let's
   talk about Flow and why it never took off in the same way
   as TypeScript.
+tags:
+  - javascript
 ---
 
 _(The [type-checker](https://flow.org/), not the state of deep work)_

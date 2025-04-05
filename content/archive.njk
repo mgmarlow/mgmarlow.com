@@ -1,10 +1,17 @@
 ---
 layout: layouts/page.njk
 eleventyImport:
-  collections: ["post"]
+  collections: ["post", "tag"]
 ---
 
 <h1>Archive</h1>
+
+<p>
+  Tags:
+  {% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
+    <a href="/tags/{{ tag }}">{{ tag }}</a>
+  {% endfor %}
+</p>
 
 <ul class="p-0">
 {%- for post in collections.post | reverse -%}

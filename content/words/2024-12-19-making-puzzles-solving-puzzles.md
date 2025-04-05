@@ -4,6 +4,8 @@ date: 2024-12-19
 description: |
   Making your own puzzles is the best way to get better at solving
   others'.
+tags:
+  - gamedev
 ---
 
 This year I've substantially buffed up my crosswording skills. Mon-Wed on the

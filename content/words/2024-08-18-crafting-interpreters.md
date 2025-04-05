@@ -1,6 +1,8 @@
 ---
 title: Crafting Interpreters, Ruby Style
 date: 2024-08-18
+tags:
+  - ruby
 ---
 
 I finally have started working through

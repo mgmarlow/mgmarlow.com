@@ -4,6 +4,8 @@ date: 2024-10-13
 description: |
   Walking through the source code for 37signal's new
   book-publishing application, Writebook.
+tags:
+  - ruby
 ---
 
 Earlier this year 37signals released [Writebook](https://once.com/writebook), a

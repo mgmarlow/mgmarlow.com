@@ -1,8 +1,5 @@
 {% extends "layouts/main.njk" %}
 
-{% set previousPost = collections.post | getPreviousCollectionItem(page) %}
-{% set nextPost = collections.post | getNextCollectionItem(page) %}
-
 {% block content %}
   {% if "emacs" in tags %}
     {% include "bookpromo.njk" %}
@@ -15,6 +12,9 @@
         <small>
           <span><time>{{ date | postDate }}</time>{{ ' (updated: ' + updated | postDate + ')' if updated }}</span>
           by {{ site.author.name }}
+          {%- for tag in tags | filterTagList -%}
+            , <a href="/tags/{{ tag }}">{{ tag }}</a>
+          {% endfor %}
         </small>
       </p>
     </div>

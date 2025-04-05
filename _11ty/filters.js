@@ -33,6 +33,16 @@ const pluginFilters = (eleventyConfig) => {
 
     return result
   })
+
+  eleventyConfig.addFilter('getKeys', (obj) => Object.keys(obj))
+
+  eleventyConfig.addFilter('filterTagList', (tags) =>
+    (tags || []).filter((tag) => ['all', 'post', 'tag'].indexOf(tag) === -1),
+  )
+
+  eleventyConfig.addFilter('sortAlphabetically', (strings) =>
+    (strings || []).sort((b, a) => b.localeCompare(a)),
+  )
 }
 
 export default pluginFilters

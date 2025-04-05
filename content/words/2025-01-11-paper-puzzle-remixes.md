@@ -3,6 +3,8 @@ title: Paper Puzzle Remixes
 date: 2025-01-11
 description: |
   Learning from the paper puzzle remixes in Puzzmo and the NYT.
+tags:
+  - gamedev
 ---
 
 The holidays are always a great time for puzzles. My parents still receive print

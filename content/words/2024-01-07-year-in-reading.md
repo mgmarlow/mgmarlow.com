@@ -1,6 +1,8 @@
 ---
 title: My Year in Reading
 date: 2024-01-07
+tags:
+  - reading
 ---
 
 I read 24 books in 2023, a total of just over 8,000 pages. It was an uncommonly
